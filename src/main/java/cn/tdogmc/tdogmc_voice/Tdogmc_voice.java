@@ -3,6 +3,8 @@ package cn.tdogmc.tdogmc_voice;
 import cn.tdogmc.tdogmc_voice.config.ModConfig; // 确保导入 ModConfig
 import cn.tdogmc.tdogmc_voice.network.PacketHandler;
 import cn.tdogmc.tdogmc_voice.network.PlayAudioDataPacket;
+import cn.tdogmc.tdogmc_voice.network.StopAllStreamsS2CPacket;
+import cn.tdogmc.tdogmc_voice.stream.ServerStreamManager;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
 import com.mojang.logging.LogUtils;
@@ -23,7 +25,7 @@ import net.minecraftforge.fml.config.ModConfig.Type;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
-import cn.tdogmc.tdogmc_voice.client.OpenALPlayer;
+import net.minecraftforge.eventbus.api.IEventBus;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -36,20 +38,16 @@ import java.util.stream.Stream;
 @Mod(Tdogmc_voice.MODID)
 public class Tdogmc_voice {
 
-    // 定义一个常量来存储我们的 Mod ID，方便复用，避免手滑打错。
     public static final String MODID = "tdogmc_voice";
-    // 创建一个日志记录器，方便我们输出信息到控制台进行调试。
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public Tdogmc_voice() {
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        // 我们仍然需要监听这个事件，但它的内容变了
+        modEventBus.addListener(this::onClientSetup);
+
         MinecraftForge.EVENT_BUS.register(this);
         PacketHandler.register();
-
-        // 注册 FML 的事件总线，用于监听客户端/服务端启动等事件
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::onClientSetup);
-
-        // 【这里是你已有的代码，保持不变】
-        // 注册我们的配置文件
         ModLoadingContext.get().registerConfig(Type.SERVER, ModConfig.SPEC, "tdogmc_voice-server.toml");
     }
 
@@ -92,9 +90,9 @@ public class Tdogmc_voice {
     };
 
     private void onClientSetup(final FMLClientSetupEvent event) {
-        // 【这部分代码保持不变】
-        LOGGER.info("Initializing Client Sound Manager...");
-        OpenALPlayer.init();
+        // 这个方法现在是空的，因为 ClientStreamManager 会自动注册自己
+        // 我们可以留一句日志来确认客户端设置事件确实被触发了
+        LOGGER.info("Tdogmc_voice client setup event fired.");
     }
 
     @SubscribeEvent
@@ -167,6 +165,59 @@ public class Tdogmc_voice {
                                 })
                         )
                 )
+        );
+        event.getDispatcher().register(Commands.literal("playstream")
+                .requires(source -> source.hasPermission(2))
+                .then(Commands.argument("position", Vec3Argument.vec3())
+                        .then(Commands.argument("soundFile", StringArgumentType.string())
+                                .suggests(SOUND_FILE_SUGGESTIONS) // 复用我们之前的 Tab 补全
+                                .executes(context -> {
+                                    CommandSourceStack source = context.getSource();
+                                    Vec3 position = Vec3Argument.getVec3(context, "position");
+                                    String soundFileName = StringArgumentType.getString(context, "soundFile");
+
+                                    // ... （可以复用之前的安全检查） ...
+                                    if (soundFileName.contains("..") || soundFileName.startsWith("/")) {
+                                        source.sendFailure(Component.literal("错误：文件路径无效！"));
+                                        return 0;
+                                    }
+
+                                    // 调用 ServerStreamManager 来发起流，而不是自己读取文件
+                                    ServerStreamManager.startStream(source.getLevel(), position, soundFileName);
+
+                                    if (ModConfig.DEBUG_MODE.get()) {
+                                        source.sendSuccess(() -> Component.literal("正在发起音频流: " + soundFileName), true);
+                                    }
+
+                                    return 1;
+                                })
+                        )
+                )
+        );
+// 在 onCommandsRegister 方法中
+
+        event.getDispatcher().register(Commands.literal("stopstreams")
+                .requires(source -> source.hasPermission(2))
+                .executes(context -> {
+                    CommandSourceStack source = context.getSource();
+
+                    // --- 核心修正 ---
+                    // 检查指令执行者是否是一个玩家
+                    if (source.getEntity() instanceof ServerPlayer player) {
+                        // 如果是，只向这个玩家发送停止数据包
+                        PacketHandler.sendToPlayer(new StopAllStreamsS2CPacket(), player);
+
+                        if (ModConfig.DEBUG_MODE.get()) {
+                            source.sendSuccess(() -> Component.literal("正在停止你客户端上的所有音频流。"), true);
+                        }
+                    } else {
+                        // 如果执行者是控制台或命令方块，则给出提示
+                        source.sendFailure(Component.literal("这个指令只能由玩家执行！"));
+                        return 0; // 返回 0 表示指令执行失败
+                    }
+
+                    return 1;
+                })
         );
     }
 }

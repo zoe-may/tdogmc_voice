@@ -146,13 +146,21 @@ Writing Output: D:\MC\tdogmc_mod\tdogmc_voice\build\reobfJar\output.jar
   cn/tdogmc/tdogmc_voice/
   cn/tdogmc/tdogmc_voice/Tdogmc_voice.class
   cn/tdogmc/tdogmc_voice/client/
-  cn/tdogmc/tdogmc_voice/client/AudioPlayer.class
+  cn/tdogmc/tdogmc_voice/client/ClientStreamManager.class
   cn/tdogmc/tdogmc_voice/client/OpenALPlayer$AudioSource.class
   cn/tdogmc/tdogmc_voice/client/OpenALPlayer$DecodedAudio.class
   cn/tdogmc/tdogmc_voice/client/OpenALPlayer.class
+  cn/tdogmc/tdogmc_voice/client/StreamingAudioPlayer.class
   cn/tdogmc/tdogmc_voice/config/
   cn/tdogmc/tdogmc_voice/config/ModConfig.class
   cn/tdogmc/tdogmc_voice/network/
+  cn/tdogmc/tdogmc_voice/network/EndStreamS2CPacket.class
   cn/tdogmc/tdogmc_voice/network/PacketHandler.class
   cn/tdogmc/tdogmc_voice/network/PlayAudioDataPacket.class
+  cn/tdogmc/tdogmc_voice/network/RequestDataC2SPacket.class
+  cn/tdogmc/tdogmc_voice/network/StartStreamS2CPacket.class
+  cn/tdogmc/tdogmc_voice/network/StopAllStreamsS2CPacket.class
+  cn/tdogmc/tdogmc_voice/network/StreamDataS2CPacket.class
+  cn/tdogmc/tdogmc_voice/stream/
+  cn/tdogmc/tdogmc_voice/stream/ServerStreamManager.class
   pack.mcmeta
