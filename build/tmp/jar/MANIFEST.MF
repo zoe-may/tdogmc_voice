@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Specification-Title: tdogmc_voice
+Specification-Vendor: TDoGMC
+Specification-Version: 1
+Implementation-Title: tdogmc_voice
+Implementation-Version: 1.0-SNAPSHOT
+Implementation-Vendor: TDoGMC
+Implementation-Timestamp: 2025-10-06T00:26:16+0800
+
