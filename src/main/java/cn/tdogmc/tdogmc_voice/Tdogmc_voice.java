@@ -11,6 +11,7 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.SharedSuggestionProvider;
+import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.commands.arguments.coordinates.Vec3Argument;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -30,6 +31,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -194,14 +196,13 @@ public class Tdogmc_voice {
                         )
                 )
         );
-// 在 onCommandsRegister 方法中
 
+        // --- 经过优化的 /stopstreams 指令 ---
         event.getDispatcher().register(Commands.literal("stopstreams")
                 .requires(source -> source.hasPermission(2))
+                // 1. 无参数执行: 目标为执行者自己
                 .executes(context -> {
                     CommandSourceStack source = context.getSource();
-
-                    // --- 核心修正 ---
                     // 检查指令执行者是否是一个玩家
                     if (source.getEntity() instanceof ServerPlayer player) {
                         // 如果是，只向这个玩家发送停止数据包
@@ -210,14 +211,59 @@ public class Tdogmc_voice {
                         if (ModConfig.DEBUG_MODE.get()) {
                             source.sendSuccess(() -> Component.literal("正在停止你客户端上的所有音频流。"), true);
                         }
+                        return 1;
                     } else {
-                        // 如果执行者是控制台或命令方块，则给出提示
-                        source.sendFailure(Component.literal("这个指令只能由玩家执行！"));
+                        // 如果执行者是控制台，给出更有用的提示
+                        source.sendFailure(Component.literal("从控制台执行此指令需要指定一个目标玩家 (例如 /stopstreams @a)"));
                         return 0; // 返回 0 表示指令执行失败
                     }
-
-                    return 1;
                 })
+                // 2. 带玩家参数执行: 目标为指定的玩家
+                .then(Commands.argument("targets", EntityArgument.players())
+                        .executes(context -> {
+                            CommandSourceStack source = context.getSource();
+                            Collection<ServerPlayer> targets = EntityArgument.getPlayers(context, "targets");
+
+                            // 遍历所有目标玩家并发送数据包
+                            for (ServerPlayer player : targets) {
+                                PacketHandler.sendToPlayer(new StopAllStreamsS2CPacket(), player);
+                            }
+
+                            if (ModConfig.DEBUG_MODE.get()) {
+                                source.sendSuccess(() -> Component.literal("已向 " + targets.size() + " 名玩家发送停止音频流的指令。"), true);
+                            }
+                            return targets.size();
+                        })
+                )
+        );
+
+        event.getDispatcher().register(Commands.literal("playstream_entity")
+                .requires(source -> source.hasPermission(2))
+                // 第一个参数：目标实体
+                .then(Commands.argument("target", net.minecraft.commands.arguments.EntityArgument.entity())
+                        .then(Commands.argument("soundFile", StringArgumentType.string())
+                                .suggests(SOUND_FILE_SUGGESTIONS)
+                                .executes(context -> {
+                                    CommandSourceStack source = context.getSource();
+                                    // 获取目标实体
+                                    net.minecraft.world.entity.Entity targetEntity = net.minecraft.commands.arguments.EntityArgument.getEntity(context, "target");
+                                    String soundFileName = StringArgumentType.getString(context, "soundFile");
+
+                                    if (soundFileName.contains("..") || soundFileName.startsWith("/")) {
+                                        source.sendFailure(Component.literal("错误：文件路径无效！"));
+                                        return 0;
+                                    }
+
+                                    // 调用新的 ServerStreamManager 方法
+                                    ServerStreamManager.startStream(source.getLevel(), targetEntity, soundFileName);
+
+                                    if (ModConfig.DEBUG_MODE.get()) {
+                                        source.sendSuccess(() -> Component.literal("正在让 " + targetEntity.getName().getString() + " 播放音频流: " + soundFileName), true);
+                                    }
+                                    return 1;
+                                })
+                        )
+                )
         );
     }
 }

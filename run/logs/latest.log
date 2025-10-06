@@ -1,45 +1,789 @@
-[0610月2025 06:02:04.638] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, MOD_DEV, --assetIndex, 5, --assetsDir, C:\Users\61530\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.4.9, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412]
-[0610月2025 06:02:04.656] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.14 by Oracle Corporation; OS Windows 11 arch amd64 version 10.0
-[0610月2025 06:02:04.888] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
-[0610月2025 06:02:04.979] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
-[0610月2025 06:02:05.413] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.6 got version 4.6
-[0610月2025 06:02:05.536] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/61530/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
-[0610月2025 06:02:05.589] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2 GL version 4.6.0 NVIDIA 576.80, NVIDIA Corporation
-[0610月2025 06:02:06.258] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\61530\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.4.9\6802c410879d06cd2c16ac24988dd5893293e21c\javafmllanguage-1.20.1-47.4.9.jar is missing mods.toml file
-[0610月2025 06:02:06.263] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\61530\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.4.9\1a098871d069f3cb2ed12f392f96f462902c0350\lowcodelanguage-1.20.1-47.4.9.jar is missing mods.toml file
-[0610月2025 06:02:06.266] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\61530\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.4.9\5279b751da7297817db4fa9729e3f3c7bf03d594\mclanguage-1.20.1-47.4.9.jar is missing mods.toml file
-[0610月2025 06:02:06.269] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\61530\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.4.9\f4f03c369d155fb551ebf908db260a0c5600c29b\fmlcore-1.20.1-47.4.9.jar is missing mods.toml file
-[0610月2025 06:02:06.561] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[0610月2025 06:02:09.013] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, C:\Users\61530\.gradle\caches\forge_gradle\assets, --assetIndex, 5]
-[0610月2025 06:02:17.164] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 188 Datafixer optimizations took 302 milliseconds
-[0610月2025 06:02:20.221] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/61530/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.4.9_mapped_official_1.20.1/forge-1.20.1-47.4.9_mapped_official_1.20.1.jar%23191!/assets/.mcassetsroot' uses unexpected schema
-[0610月2025 06:02:20.222] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/61530/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.4.9_mapped_official_1.20.1/forge-1.20.1-47.4.9_mapped_official_1.20.1.jar%23191!/data/.mcassetsroot' uses unexpected schema
-[0610月2025 06:02:20.277] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[0610月2025 06:02:20.298] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
-[0610月2025 06:02:20.533] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.1 build 7
-[0610月2025 06:02:21.018] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.9, for MC 1.20.1 with MCP 20230612.114412
-[0610月2025 06:02:21.018] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.4.9 Initialized
-[0610月2025 06:02:22.085] [Render thread/INFO] [net.minecraftforge.gametest.ForgeGameTestHooks/]: Enabled Gametest Namespaces: [tdogmc_voice]
-[0610月2025 06:02:22.375] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, mod_resources
-[0610月2025 06:02:22.771] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
-[0610月2025 06:02:22.798] [Worker-Main-8/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.0.06.hex, loading
-[0610月2025 06:02:22.977] [Worker-Main-17/INFO] [cn.tdogmc.tdogmc_voice.Tdogmc_voice/]: Tdogmc_voice client setup event fired.
-[0610月2025 06:02:24.123] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: AHEAD Current: 47.4.9 Target: null
-[0610月2025 06:02:25.899] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
-[0610月2025 06:02:25.899] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[0610月2025 06:02:26.028] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on 扬声器 (Realtek(R) Audio)
-[0610月2025 06:02:26.029] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
-[0610月2025 06:02:26.165] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
-[0610月2025 06:02:26.176] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
-[0610月2025 06:02:26.177] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[0610月2025 06:02:26.177] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[0610月2025 06:02:26.178] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
-[0610月2025 06:02:26.180] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[0610月2025 06:02:26.182] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
-[0610月2025 06:02:26.182] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[0610月2025 06:02:26.182] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[0610月2025 06:02:26.715] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[0610月2025 06:02:26.783] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
-[0610月2025 06:02:26.784] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
-[0610月2025 06:02:26.785] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[0610月2025 06:02:27.761] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient/]: Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: 0
+[0610月2025 17:07:41.606] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, MOD_DEV, --assetIndex, 5, --assetsDir, C:\Users\61530\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.4.9, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412]
+[0610月2025 17:07:41.615] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.14 by Oracle Corporation; OS Windows 11 arch amd64 version 10.0
+[0610月2025 17:07:41.737] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
+[0610月2025 17:07:41.814] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
+[0610月2025 17:07:42.203] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.6 got version 4.6
+[0610月2025 17:07:42.314] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/61530/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
+[0610月2025 17:07:42.352] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2 GL version 4.6.0 NVIDIA 576.80, NVIDIA Corporation
+[0610月2025 17:07:42.625] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\61530\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.4.9\6802c410879d06cd2c16ac24988dd5893293e21c\javafmllanguage-1.20.1-47.4.9.jar is missing mods.toml file
+[0610月2025 17:07:42.629] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\61530\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.4.9\1a098871d069f3cb2ed12f392f96f462902c0350\lowcodelanguage-1.20.1-47.4.9.jar is missing mods.toml file
+[0610月2025 17:07:42.631] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\61530\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.4.9\5279b751da7297817db4fa9729e3f3c7bf03d594\mclanguage-1.20.1-47.4.9.jar is missing mods.toml file
+[0610月2025 17:07:42.634] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\61530\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.4.9\f4f03c369d155fb551ebf908db260a0c5600c29b\fmlcore-1.20.1-47.4.9.jar is missing mods.toml file
+[0610月2025 17:07:42.748] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[0610月2025 17:07:44.560] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, C:\Users\61530\.gradle\caches\forge_gradle\assets, --assetIndex, 5]
+[0610月2025 17:07:50.907] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 188 Datafixer optimizations took 210 milliseconds
+[0610月2025 17:07:53.569] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/61530/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.4.9_mapped_official_1.20.1/forge-1.20.1-47.4.9_mapped_official_1.20.1.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[0610月2025 17:07:53.570] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/61530/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.4.9_mapped_official_1.20.1/forge-1.20.1-47.4.9_mapped_official_1.20.1.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[0610月2025 17:07:53.611] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[0610月2025 17:07:53.633] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
+[0610月2025 17:07:53.813] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.1 build 7
+[0610月2025 17:07:54.258] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.9, for MC 1.20.1 with MCP 20230612.114412
+[0610月2025 17:07:54.260] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.4.9 Initialized
+[0610月2025 17:07:55.395] [Render thread/INFO] [net.minecraftforge.gametest.ForgeGameTestHooks/]: Enabled Gametest Namespaces: [tdogmc_voice]
+[0610月2025 17:07:55.627] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, mod_resources
+[0610月2025 17:07:55.999] [Worker-Main-18/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.0.06.hex, loading
+[0610月2025 17:07:56.119] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
+[0610月2025 17:07:56.170] [Worker-Main-12/INFO] [cn.tdogmc.tdogmc_voice.Tdogmc_voice/]: Tdogmc_voice client setup event fired.
+[0610月2025 17:07:57.355] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: AHEAD Current: 47.4.9 Target: null
+[0610月2025 17:07:59.347] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
+[0610月2025 17:07:59.348] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[0610月2025 17:07:59.506] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on 扬声器 (Realtek(R) Audio)
+[0610月2025 17:07:59.507] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
+[0610月2025 17:07:59.602] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[0610月2025 17:07:59.609] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[0610月2025 17:07:59.609] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[0610月2025 17:07:59.609] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[0610月2025 17:07:59.611] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[0610月2025 17:07:59.613] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[0610月2025 17:07:59.615] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[0610月2025 17:07:59.615] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[0610月2025 17:07:59.615] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[0610月2025 17:07:59.902] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[0610月2025 17:07:59.946] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[0610月2025 17:07:59.948] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[0610月2025 17:07:59.948] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[0610月2025 17:08:01.080] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient/]: Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: 0
+[0610月2025 17:09:19.497] [Render thread/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: Injecting existing registry data into this CLIENT instance
+[0610月2025 17:09:20.834] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
+[0610月2025 17:09:20.958] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 1271 advancements
+[0610月2025 17:09:21.238] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.1
+[0610月2025 17:09:21.240] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[0610月2025 17:09:22.227] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[0610月2025 17:09:23.776] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: 准备生成区域中：0%
+[0610月2025 17:09:23.795] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: 准备生成区域中：0%
+[0610月2025 17:09:23.795] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: 准备生成区域中：0%
+[0610月2025 17:09:23.795] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: 准备生成区域中：0%
+[0610月2025 17:09:24.242] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: 准备生成区域中：4%
+[0610月2025 17:09:24.729] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: 准备生成区域中：92%
+[0610月2025 17:09:24.762] [Server thread/INFO] [net.minecraftforge.server.permission.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
+[0610月2025 17:09:24.768] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 2540 ms
+[0610月2025 17:09:24.912] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 12, from 10
+[0610月2025 17:09:24.914] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
+[0610月2025 17:09:25.199] [Render thread/WARN] [io.netty.util.internal.SystemPropertyUtil/]: Unable to parse the boolean system property 'java.net.preferIPv6Addresses':system - using the default value: false
+[0610月2025 17:09:26.478] [Netty Local Client IO #0/INFO] [net.minecraftforge.network.NetworkHooks/]: Connected to a modded server.
+[0610月2025 17:09:26.570] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:bf52084a] logged in with entity id 178 at (-174.46742641438917, 80.0, 473.03957276849945)
+[0610月2025 17:09:26.666] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev加入了游戏
+[0610月2025 17:09:27.544] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 2 advancements
+[0610月2025 17:09:33.707] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [DEBUG] startStream called on SERVER.
+[0610月2025 17:09:33.707] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [DEBUG] Received soundFileName: 'test.ogg'
+[0610月2025 17:09:33.707] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [DEBUG] Trying to resolve absolute path: D:\MC\tdogmc_mod\tdogmc_voice\run\sounds\test.ogg
+[0610月2025 17:09:33.720] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: 已发起新的 OGG 音频流 'test.ogg', ID: c5fc070a-b8fd-4d38-80c5-819ee4473d82
+[0610月2025 17:09:33.724] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: 正在发起音频流: test.ogg]
+[0610月2025 17:09:33.737] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 正在发起音频流: test.ogg
+[0610月2025 17:09:33.760] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: >>>>> [MAIN THREAD] Executing startStream for streamId (c5fc070a-b8fd-4d38-80c5-819ee4473d82). Map size BEFORE put: 0 <<<<<
+[0610月2025 17:09:33.763] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: >>>>> [MAIN THREAD] Created and PUT new player for streamId (c5fc070a-b8fd-4d38-80c5-819ee4473d82). Map size AFTER put: 1 <<<<<
+[0610月2025 17:09:33.777] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: c5fc070a-b8fd-4d38-80c5-819ee4473d82
+[0610月2025 17:09:33.777] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 47500
+[0610月2025 17:09:33.778] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:33.778] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:33.778] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:33.778] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 31116
+[0610月2025 17:09:33.785] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: c5fc070a-b8fd-4d38-80c5-819ee4473d82
+[0610月2025 17:09:33.785] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 31116
+[0610月2025 17:09:33.786] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:33.786] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:33.786] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:33.786] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 14732
+[0610月2025 17:09:33.792] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: c5fc070a-b8fd-4d38-80c5-819ee4473d82
+[0610月2025 17:09:33.792] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 14732
+[0610月2025 17:09:33.792] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 14732
+[0610月2025 17:09:33.793] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead < CHUNK_SIZE, creating smaller chunk.
+[0610月2025 17:09:33.793] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 14732 to Dev
+[0610月2025 17:09:33.793] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 0
+[0610月2025 17:09:33.793] [Server thread/WARN] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] WARNING: Stream may have ended prematurely. available() is 0 but bytesRead was not -1.
+[0610月2025 17:09:33.801] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: c5fc070a-b8fd-4d38-80c5-819ee4473d82
+[0610月2025 17:09:33.801] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 0
+[0610月2025 17:09:33.802] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: -1
+[0610月2025 17:09:33.802] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == -1. This is the END OF STREAM. Sending EndPacket.
+[0610月2025 17:09:33.802] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: OGG 音频流 c5fc070a-b8fd-4d38-80c5-819ee4473d82 已完成并关闭。
+[0610月2025 17:09:33.809] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: Received end signal for streamId (c5fc070a-b8fd-4d38-80c5-819ee4473d82).
+[0610月2025 17:09:37.512] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.StreamingAudioPlayer/]: [c5fc070a-b8fd-4d38-80c5-819ee4473d82] Stream finished playing.
+[0610月2025 17:09:37.512] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.StreamingAudioPlayer/]: [c5fc070a-b8fd-4d38-80c5-819ee4473d82] Player destroyed.
+[0610月2025 17:09:37.512] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: <<<<< REMOVING player for streamId (c5fc070a-b8fd-4d38-80c5-819ee4473d82). Map size BEFORE remove: 1 >>>>>
+[0610月2025 17:09:37.512] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: <<<<< REMOVED player for streamId (c5fc070a-b8fd-4d38-80c5-819ee4473d82). Map size AFTER remove: 0 >>>>>
+[0610月2025 17:09:39.539] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [DEBUG] startStream called on SERVER.
+[0610月2025 17:09:39.539] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [DEBUG] Received soundFileName: '2.ogg'
+[0610月2025 17:09:39.539] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [DEBUG] Trying to resolve absolute path: D:\MC\tdogmc_mod\tdogmc_voice\run\sounds\2.ogg
+[0610月2025 17:09:39.539] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: 已发起新的 OGG 音频流 '2.ogg', ID: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.539] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: 正在发起音频流: 2.ogg]
+[0610月2025 17:09:39.539] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 正在发起音频流: 2.ogg
+[0610月2025 17:09:39.539] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: >>>>> [MAIN THREAD] Executing startStream for streamId (f4df8118-e770-40e9-a4b7-f831ef0d3fed). Map size BEFORE put: 0 <<<<<
+[0610月2025 17:09:39.540] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: >>>>> [MAIN THREAD] Created and PUT new player for streamId (f4df8118-e770-40e9-a4b7-f831ef0d3fed). Map size AFTER put: 1 <<<<<
+[0610月2025 17:09:39.540] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.540] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1484112
+[0610月2025 17:09:39.540] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.540] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.540] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.540] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1467728
+[0610月2025 17:09:39.548] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.548] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1467728
+[0610月2025 17:09:39.548] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.548] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.548] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.548] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1451344
+[0610月2025 17:09:39.556] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.556] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1451344
+[0610月2025 17:09:39.556] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.556] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.556] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.556] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1434960
+[0610月2025 17:09:39.569] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.569] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1434960
+[0610月2025 17:09:39.569] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.569] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.569] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.569] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1418576
+[0610月2025 17:09:39.574] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.574] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1418576
+[0610月2025 17:09:39.574] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.574] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.574] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.574] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1402192
+[0610月2025 17:09:39.581] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.582] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1402192
+[0610月2025 17:09:39.582] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.582] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.582] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.582] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1385808
+[0610月2025 17:09:39.589] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.590] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1385808
+[0610月2025 17:09:39.590] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.590] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.590] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.590] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1369424
+[0610月2025 17:09:39.598] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.598] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1369424
+[0610月2025 17:09:39.598] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.599] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.599] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.599] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1353040
+[0610月2025 17:09:39.607] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.607] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1353040
+[0610月2025 17:09:39.607] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.607] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.607] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.607] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1336656
+[0610月2025 17:09:39.617] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.617] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1336656
+[0610月2025 17:09:39.617] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.617] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.617] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.617] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1320272
+[0610月2025 17:09:39.623] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.623] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1320272
+[0610月2025 17:09:39.623] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.623] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.623] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.624] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1303888
+[0610月2025 17:09:39.632] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.632] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1303888
+[0610月2025 17:09:39.632] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.632] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.632] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.632] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1287504
+[0610月2025 17:09:39.640] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.640] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1287504
+[0610月2025 17:09:39.640] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.640] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.640] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.640] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1271120
+[0610月2025 17:09:39.649] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.649] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1271120
+[0610月2025 17:09:39.649] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.649] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.649] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.649] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1254736
+[0610月2025 17:09:39.657] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.657] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1254736
+[0610月2025 17:09:39.657] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.657] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.657] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.657] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1238352
+[0610月2025 17:09:39.667] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.667] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1238352
+[0610月2025 17:09:39.667] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.667] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.667] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.668] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1221968
+[0610月2025 17:09:39.674] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.674] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1221968
+[0610月2025 17:09:39.674] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.674] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.674] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.674] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1205584
+[0610月2025 17:09:39.682] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.682] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1205584
+[0610月2025 17:09:39.682] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.682] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.682] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.682] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1189200
+[0610月2025 17:09:39.690] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.690] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1189200
+[0610月2025 17:09:39.690] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.690] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.690] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.690] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1172816
+[0610月2025 17:09:39.698] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.698] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1172816
+[0610月2025 17:09:39.698] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.698] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.698] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.698] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1156432
+[0610月2025 17:09:39.707] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.707] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1156432
+[0610月2025 17:09:39.707] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.707] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.707] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.707] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1140048
+[0610月2025 17:09:39.718] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.718] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1140048
+[0610月2025 17:09:39.718] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.718] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.718] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.718] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1123664
+[0610月2025 17:09:39.724] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.724] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1123664
+[0610月2025 17:09:39.724] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.724] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.724] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.724] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1107280
+[0610月2025 17:09:39.733] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.733] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1107280
+[0610月2025 17:09:39.733] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.733] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.733] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.733] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1090896
+[0610月2025 17:09:39.741] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.741] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1090896
+[0610月2025 17:09:39.741] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.741] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.742] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.742] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1074512
+[0610月2025 17:09:39.750] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.750] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1074512
+[0610月2025 17:09:39.750] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.750] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.750] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.750] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1058128
+[0610月2025 17:09:39.758] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.758] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1058128
+[0610月2025 17:09:39.758] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.758] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.758] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.758] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1041744
+[0610月2025 17:09:39.768] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.768] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1041744
+[0610月2025 17:09:39.768] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.768] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.768] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.768] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1025360
+[0610月2025 17:09:39.774] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.775] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1025360
+[0610月2025 17:09:39.775] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.775] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.775] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.775] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 1008976
+[0610月2025 17:09:39.783] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.783] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 1008976
+[0610月2025 17:09:39.783] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.783] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.783] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.783] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 992592
+[0610月2025 17:09:39.792] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.792] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 992592
+[0610月2025 17:09:39.792] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.792] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.792] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.792] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 976208
+[0610月2025 17:09:39.800] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.800] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 976208
+[0610月2025 17:09:39.800] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.800] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.800] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.800] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 959824
+[0610月2025 17:09:39.808] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.809] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 959824
+[0610月2025 17:09:39.809] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.809] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.809] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.809] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 943440
+[0610月2025 17:09:39.824] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.824] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 943440
+[0610月2025 17:09:39.824] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.824] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.824] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.824] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 927056
+[0610月2025 17:09:39.825] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.825] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 927056
+[0610月2025 17:09:39.825] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.825] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.825] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.826] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 910672
+[0610月2025 17:09:39.834] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.834] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 910672
+[0610月2025 17:09:39.835] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.835] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.835] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.835] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 894288
+[0610月2025 17:09:39.842] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.842] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 894288
+[0610月2025 17:09:39.842] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.843] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.843] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.843] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 877904
+[0610月2025 17:09:39.851] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.851] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 877904
+[0610月2025 17:09:39.851] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.851] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.851] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.851] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 861520
+[0610月2025 17:09:39.859] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.859] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 861520
+[0610月2025 17:09:39.859] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.859] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.859] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.859] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 845136
+[0610月2025 17:09:39.870] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.870] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 845136
+[0610月2025 17:09:39.870] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.870] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.870] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.870] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 828752
+[0610月2025 17:09:39.876] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.876] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 828752
+[0610月2025 17:09:39.876] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.877] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.877] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.877] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 812368
+[0610月2025 17:09:39.885] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.885] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 812368
+[0610月2025 17:09:39.885] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.885] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.885] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.885] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 795984
+[0610月2025 17:09:39.893] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.893] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 795984
+[0610月2025 17:09:39.893] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.893] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.893] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.893] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 779600
+[0610月2025 17:09:39.901] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.901] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 779600
+[0610月2025 17:09:39.901] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.901] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.901] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.901] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 763216
+[0610月2025 17:09:39.910] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.910] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 763216
+[0610月2025 17:09:39.910] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.911] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.911] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.911] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 746832
+[0610月2025 17:09:39.925] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.925] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 746832
+[0610月2025 17:09:39.925] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.925] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.925] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.925] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 730448
+[0610月2025 17:09:39.933] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.933] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 730448
+[0610月2025 17:09:39.933] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.933] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.933] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.933] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 714064
+[0610月2025 17:09:39.942] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.942] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 714064
+[0610月2025 17:09:39.942] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.942] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.942] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.942] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 697680
+[0610月2025 17:09:39.950] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.951] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 697680
+[0610月2025 17:09:39.951] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.951] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.951] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.951] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 681296
+[0610月2025 17:09:39.959] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.959] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 681296
+[0610月2025 17:09:39.959] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.959] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.960] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.960] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 664912
+[0610月2025 17:09:39.973] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.973] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 664912
+[0610月2025 17:09:39.973] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.974] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.974] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.974] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 648528
+[0610月2025 17:09:39.976] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.976] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 648528
+[0610月2025 17:09:39.976] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.976] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.977] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.977] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 632144
+[0610月2025 17:09:39.984] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.984] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 632144
+[0610月2025 17:09:39.984] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.984] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.984] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.984] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 615760
+[0610月2025 17:09:39.993] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:39.993] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 615760
+[0610月2025 17:09:39.993] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:39.993] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:39.993] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:39.993] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 599376
+[0610月2025 17:09:40.001] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.001] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 599376
+[0610月2025 17:09:40.001] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.001] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.001] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.001] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 582992
+[0610月2025 17:09:40.010] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.010] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 582992
+[0610月2025 17:09:40.010] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.010] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.010] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.010] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 566608
+[0610月2025 17:09:40.019] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.019] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 566608
+[0610月2025 17:09:40.019] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.019] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.019] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.019] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 550224
+[0610月2025 17:09:40.027] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.027] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 550224
+[0610月2025 17:09:40.027] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.027] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.027] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.027] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 533840
+[0610月2025 17:09:40.035] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.035] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 533840
+[0610月2025 17:09:40.035] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.035] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.035] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.035] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 517456
+[0610月2025 17:09:40.044] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.044] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 517456
+[0610月2025 17:09:40.044] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.044] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.044] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.044] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 501072
+[0610月2025 17:09:40.052] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.052] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 501072
+[0610月2025 17:09:40.052] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.052] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.052] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.052] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 484688
+[0610月2025 17:09:40.060] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.060] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 484688
+[0610月2025 17:09:40.060] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.060] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.060] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.060] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 468304
+[0610月2025 17:09:40.070] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.070] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 468304
+[0610月2025 17:09:40.070] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.070] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.070] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.070] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 451920
+[0610月2025 17:09:40.079] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.079] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 451920
+[0610月2025 17:09:40.080] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.080] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.080] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.080] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 435536
+[0610月2025 17:09:40.087] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.087] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 435536
+[0610月2025 17:09:40.087] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.087] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.087] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.087] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 419152
+[0610月2025 17:09:40.096] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.096] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 419152
+[0610月2025 17:09:40.096] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.096] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.096] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.096] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 402768
+[0610月2025 17:09:40.104] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.104] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 402768
+[0610月2025 17:09:40.104] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.104] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.104] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.104] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 386384
+[0610月2025 17:09:40.112] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.112] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 386384
+[0610月2025 17:09:40.112] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.112] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.112] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.112] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 370000
+[0610月2025 17:09:40.120] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.120] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 370000
+[0610月2025 17:09:40.120] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.120] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.120] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.120] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 353616
+[0610月2025 17:09:40.128] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.128] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 353616
+[0610月2025 17:09:40.128] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.128] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.128] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.128] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 337232
+[0610月2025 17:09:40.137] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.137] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 337232
+[0610月2025 17:09:40.137] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.137] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.137] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.137] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 320848
+[0610月2025 17:09:40.146] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.146] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 320848
+[0610月2025 17:09:40.146] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.146] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.146] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.147] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 304464
+[0610月2025 17:09:40.154] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.154] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 304464
+[0610月2025 17:09:40.154] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.154] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.154] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.154] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 288080
+[0610月2025 17:09:40.162] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.162] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 288080
+[0610月2025 17:09:40.162] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.162] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.163] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.163] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 271696
+[0610月2025 17:09:40.170] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.170] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 271696
+[0610月2025 17:09:40.170] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.170] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.172] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.172] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 255312
+[0610月2025 17:09:40.180] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.180] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 255312
+[0610月2025 17:09:40.180] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.180] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.180] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.180] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 238928
+[0610月2025 17:09:40.188] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.188] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 238928
+[0610月2025 17:09:40.188] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.188] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.189] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.189] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 222544
+[0610月2025 17:09:40.197] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.197] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 222544
+[0610月2025 17:09:40.197] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.197] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.197] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.197] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 206160
+[0610月2025 17:09:40.205] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.205] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 206160
+[0610月2025 17:09:40.205] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.205] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.205] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.205] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 189776
+[0610月2025 17:09:40.217] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.217] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 189776
+[0610月2025 17:09:40.217] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.217] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.217] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.217] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 173392
+[0610月2025 17:09:40.221] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.221] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 173392
+[0610月2025 17:09:40.221] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.222] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.222] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.222] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 157008
+[0610月2025 17:09:40.230] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.230] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 157008
+[0610月2025 17:09:40.230] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.230] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.230] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.230] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 140624
+[0610月2025 17:09:40.238] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.238] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 140624
+[0610月2025 17:09:40.238] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.238] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.238] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.238] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 124240
+[0610月2025 17:09:40.247] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.247] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 124240
+[0610月2025 17:09:40.247] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.247] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.247] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.247] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 107856
+[0610月2025 17:09:40.255] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.255] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 107856
+[0610月2025 17:09:40.255] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.255] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.255] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.255] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 91472
+[0610月2025 17:09:40.267] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.267] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 91472
+[0610月2025 17:09:40.267] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.267] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.267] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.267] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 75088
+[0610月2025 17:09:40.272] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.272] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 75088
+[0610月2025 17:09:40.272] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.272] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.272] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.272] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 58704
+[0610月2025 17:09:40.280] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.280] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 58704
+[0610月2025 17:09:40.280] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.280] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.280] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.280] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 42320
+[0610月2025 17:09:40.288] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.289] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 42320
+[0610月2025 17:09:40.289] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.289] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.289] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.289] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 25936
+[0610月2025 17:09:40.297] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.297] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 25936
+[0610月2025 17:09:40.297] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 16384
+[0610月2025 17:09:40.297] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == CHUNK_SIZE, sending full buffer.
+[0610月2025 17:09:40.297] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 16384 to Dev
+[0610月2025 17:09:40.297] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 9552
+[0610月2025 17:09:40.304] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.305] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 9552
+[0610月2025 17:09:40.305] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: 9552
+[0610月2025 17:09:40.305] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead < CHUNK_SIZE, creating smaller chunk.
+[0610月2025 17:09:40.305] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Sent data chunk of size 9552 to Dev
+[0610月2025 17:09:40.305] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Stream NOT ended. Bytes available after read: 0
+[0610月2025 17:09:40.305] [Server thread/WARN] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] WARNING: Stream may have ended prematurely. available() is 0 but bytesRead was not -1.
+[0610月2025 17:09:40.319] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] handleDataRequest: Received request for streamId: f4df8118-e770-40e9-a4b7-f831ef0d3fed
+[0610月2025 17:09:40.320] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Bytes available in stream before read: 0
+[0610月2025 17:09:40.320] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] Attempted to read 16384 bytes, actually read: -1
+[0610月2025 17:09:40.320] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: >>> [BLACKBOX] bytesRead == -1. This is the END OF STREAM. Sending EndPacket.
+[0610月2025 17:09:40.320] [Server thread/INFO] [cn.tdogmc.tdogmc_voice.stream.ServerStreamManager/]: OGG 音频流 f4df8118-e770-40e9-a4b7-f831ef0d3fed 已完成并关闭。
+[0610月2025 17:09:40.324] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: Received end signal for streamId (f4df8118-e770-40e9-a4b7-f831ef0d3fed).
+[0610月2025 17:10:00.083] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: 已向 1 名玩家发送停止音频流的指令。]
+[0610月2025 17:10:00.086] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: Received command to stop all streams. Cleaning up 1 players.
+[0610月2025 17:10:00.087] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 已向 1 名玩家发送停止音频流的指令。
+[0610月2025 17:10:00.087] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.StreamingAudioPlayer/]: [f4df8118-e770-40e9-a4b7-f831ef0d3fed] Player destroyed.
+[0610月2025 17:10:04.693] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: 正在停止你客户端上的所有音频流。]
+[0610月2025 17:10:04.699] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: Received command to stop all streams. Cleaning up 0 players.
+[0610月2025 17:10:04.699] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 正在停止你客户端上的所有音频流。
+[0610月2025 17:10:06.765] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[0610月2025 17:10:06.772] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
+[0610月2025 17:10:06.782] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
+[0610月2025 17:10:06.784] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[0610月2025 17:10:07.514] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[0610月2025 17:10:07.517] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
+[0610月2025 17:10:07.523] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
+[0610月2025 17:10:07.524] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[0610月2025 17:10:08.364] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[0610月2025 17:10:08.372] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
+[0610月2025 17:10:08.375] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
+[0610月2025 17:10:08.376] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[0610月2025 17:10:39.872] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: 连接中断
+[0610月2025 17:10:39.873] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev退出了游戏
+[0610月2025 17:10:39.880] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Stopping singleplayer server as player logged out
+[0610月2025 17:10:39.914] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[0610月2025 17:10:39.914] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[0610月2025 17:10:39.914] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[0610月2025 17:10:40.109] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
+[0610月2025 17:10:40.416] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
+[0610月2025 17:10:40.417] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[0610月2025 17:10:40.426] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (新的世界): All chunks are saved
+[0610月2025 17:10:40.426] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[0610月2025 17:10:40.426] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[0610月2025 17:10:40.426] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
+[0610月2025 17:11:27.212] [Netty Client IO #0/INFO] [net.minecraftforge.client.ForgeHooksClient/CLIENTHOOKS]: 客户端可能需要在服务端上的附属Mod: mohist@1.20.1
+[0610月2025 17:11:29.630] [Render thread/INFO] [net.minecraft.client.gui.screens.ConnectScreen/]: Connecting to 111.229.223.229, 25567
+[0610月2025 17:11:30.759] [Render thread/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: Injecting existing registry data into this CLIENT instance
+[0610月2025 17:11:31.132] [Netty Client IO #1/INFO] [net.minecraftforge.network.NetworkHooks/]: Connected to a modded server.
+[0610月2025 17:11:31.471] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Dev加入了游戏
+[0610月2025 17:11:33.479] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 2 advancements
+[0610月2025 17:11:38.704] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 正在发起音频流: test.ogg
+[0610月2025 17:11:38.704] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: >>>>> [MAIN THREAD] Executing startStream for streamId (e5ebaeb8-6354-4b5f-b719-73afdb401f70). Map size BEFORE put: 0 <<<<<
+[0610月2025 17:11:38.704] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: >>>>> [MAIN THREAD] Created and PUT new player for streamId (e5ebaeb8-6354-4b5f-b719-73afdb401f70). Map size AFTER put: 1 <<<<<
+[0610月2025 17:11:38.940] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: Received end signal for streamId (e5ebaeb8-6354-4b5f-b719-73afdb401f70).
+[0610月2025 17:11:42.465] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.StreamingAudioPlayer/]: [e5ebaeb8-6354-4b5f-b719-73afdb401f70] Stream finished playing.
+[0610月2025 17:11:42.465] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.StreamingAudioPlayer/]: [e5ebaeb8-6354-4b5f-b719-73afdb401f70] Player destroyed.
+[0610月2025 17:11:42.465] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: <<<<< REMOVING player for streamId (e5ebaeb8-6354-4b5f-b719-73afdb401f70). Map size BEFORE remove: 1 >>>>>
+[0610月2025 17:11:42.465] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: <<<<< REMOVED player for streamId (e5ebaeb8-6354-4b5f-b719-73afdb401f70). Map size AFTER remove: 0 >>>>>
+[0610月2025 17:11:49.615] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 正在发起音频流: 2.ogg
+[0610月2025 17:11:49.615] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: >>>>> [MAIN THREAD] Executing startStream for streamId (a7aef0a1-bd39-4db5-b0b7-5f48d962097a). Map size BEFORE put: 0 <<<<<
+[0610月2025 17:11:49.615] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: >>>>> [MAIN THREAD] Created and PUT new player for streamId (a7aef0a1-bd39-4db5-b0b7-5f48d962097a). Map size AFTER put: 1 <<<<<
+[0610月2025 17:11:55.411] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: Received end signal for streamId (a7aef0a1-bd39-4db5-b0b7-5f48d962097a).
+[0610月2025 17:12:15.387] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 正在发起音频流: test.ogg
+[0610月2025 17:12:15.387] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: >>>>> [MAIN THREAD] Executing startStream for streamId (d28dedd8-27c9-457e-b66f-0a8226b4081a). Map size BEFORE put: 1 <<<<<
+[0610月2025 17:12:15.388] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: >>>>> [MAIN THREAD] Created and PUT new player for streamId (d28dedd8-27c9-457e-b66f-0a8226b4081a). Map size AFTER put: 2 <<<<<
+[0610月2025 17:12:15.741] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: Received end signal for streamId (d28dedd8-27c9-457e-b66f-0a8226b4081a).
+[0610月2025 17:12:19.169] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.StreamingAudioPlayer/]: [d28dedd8-27c9-457e-b66f-0a8226b4081a] Stream finished playing.
+[0610月2025 17:12:19.169] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.StreamingAudioPlayer/]: [d28dedd8-27c9-457e-b66f-0a8226b4081a] Player destroyed.
+[0610月2025 17:12:19.169] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: <<<<< REMOVING player for streamId (d28dedd8-27c9-457e-b66f-0a8226b4081a). Map size BEFORE remove: 2 >>>>>
+[0610月2025 17:12:19.169] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: <<<<< REMOVED player for streamId (d28dedd8-27c9-457e-b66f-0a8226b4081a). Map size AFTER remove: 1 >>>>>
+[0610月2025 17:12:26.059] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: Received command to stop all streams. Cleaning up 1 players.
+[0610月2025 17:12:26.059] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 已向 1 名玩家发送停止音频流的指令。
+[0610月2025 17:12:26.059] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.StreamingAudioPlayer/]: [a7aef0a1-bd39-4db5-b0b7-5f48d962097a] Player destroyed.
+[0610月2025 17:12:42.025] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 正在发起音频流: 1-中世纪 弥撒中的格里高利圣咏 Gregorian Chant-1080P 高清-AVC.ogg
+[0610月2025 17:13:09.770] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: Received command to stop all streams. Cleaning up 0 players.
+[0610月2025 17:13:09.770] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 已向 1 名玩家发送停止音频流的指令。
+[0610月2025 17:13:19.061] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 正在发起音频流: 3.ogg
+[0610月2025 17:13:19.062] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: >>>>> [MAIN THREAD] Executing startStream for streamId (8a770ff5-5f2a-408a-90c7-923c73200d11). Map size BEFORE put: 0 <<<<<
+[0610月2025 17:13:19.062] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: >>>>> [MAIN THREAD] Created and PUT new player for streamId (8a770ff5-5f2a-408a-90c7-923c73200d11). Map size AFTER put: 1 <<<<<
+[0610月2025 17:14:53.555] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Unable to play empty soundEvent: minecraft:entity.cod.ambient
+[0610月2025 17:14:55.864] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 11 advancements
+[0610月2025 17:15:27.436] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: Received command to stop all streams. Cleaning up 1 players.
+[0610月2025 17:15:27.436] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 已向 1 名玩家发送停止音频流的指令。
+[0610月2025 17:15:27.436] [Render thread/WARN] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: Received data chunk for unknown streamId (8a770ff5-5f2a-408a-90c7-923c73200d11), ignoring.
+[0610月2025 17:15:27.437] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.StreamingAudioPlayer/]: [8a770ff5-5f2a-408a-90c7-923c73200d11] Player destroyed.
+[0610月2025 17:15:42.346] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 未知或不完整的命令，错误见下\n...get entity<--[此处]
+[0610月2025 17:15:58.139] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 正在让 僵尸 播放音频流: test.ogg
+[0610月2025 17:15:58.139] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: Creating new ENTITY-FOLLOWING streaming player for streamId (07e1d858-3624-4db9-a1f2-969c527ea45d)
+[0610月2025 17:15:58.377] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: Received end signal for streamId (07e1d858-3624-4db9-a1f2-969c527ea45d).
+[0610月2025 17:16:01.917] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.StreamingAudioPlayer/]: [07e1d858-3624-4db9-a1f2-969c527ea45d] Stream finished playing.
+[0610月2025 17:16:01.917] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.StreamingAudioPlayer/]: [07e1d858-3624-4db9-a1f2-969c527ea45d] Player destroyed.
+[0610月2025 17:16:01.917] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: <<<<< REMOVING player for streamId (07e1d858-3624-4db9-a1f2-969c527ea45d). Map size BEFORE remove: 1 >>>>>
+[0610月2025 17:16:01.917] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: <<<<< REMOVED player for streamId (07e1d858-3624-4db9-a1f2-969c527ea45d). Map size AFTER remove: 0 >>>>>
+[0610月2025 17:16:08.267] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 正在让 僵尸 播放音频流: test.ogg
+[0610月2025 17:16:08.267] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: Creating new ENTITY-FOLLOWING streaming player for streamId (2c8f25bd-4b6d-4c54-94a9-848f5b1097d4)
+[0610月2025 17:16:08.520] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: Received end signal for streamId (2c8f25bd-4b6d-4c54-94a9-848f5b1097d4).
+[0610月2025 17:16:12.068] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.StreamingAudioPlayer/]: [2c8f25bd-4b6d-4c54-94a9-848f5b1097d4] Stream finished playing.
+[0610月2025 17:16:12.069] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.StreamingAudioPlayer/]: [2c8f25bd-4b6d-4c54-94a9-848f5b1097d4] Player destroyed.
+[0610月2025 17:16:12.069] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: <<<<< REMOVING player for streamId (2c8f25bd-4b6d-4c54-94a9-848f5b1097d4). Map size BEFORE remove: 1 >>>>>
+[0610月2025 17:16:12.069] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: <<<<< REMOVED player for streamId (2c8f25bd-4b6d-4c54-94a9-848f5b1097d4). Map size AFTER remove: 0 >>>>>
+[0610月2025 17:16:17.730] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 正在让 僵尸 播放音频流: test.ogg
+[0610月2025 17:16:17.730] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: Creating new ENTITY-FOLLOWING streaming player for streamId (69200b21-473a-46f3-a1a8-70034f32dc61)
+[0610月2025 17:16:17.966] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: Received end signal for streamId (69200b21-473a-46f3-a1a8-70034f32dc61).
+[0610月2025 17:16:21.518] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.StreamingAudioPlayer/]: [69200b21-473a-46f3-a1a8-70034f32dc61] Stream finished playing.
+[0610月2025 17:16:21.518] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.StreamingAudioPlayer/]: [69200b21-473a-46f3-a1a8-70034f32dc61] Player destroyed.
+[0610月2025 17:16:21.518] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: <<<<< REMOVING player for streamId (69200b21-473a-46f3-a1a8-70034f32dc61). Map size BEFORE remove: 1 >>>>>
+[0610月2025 17:16:21.518] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: <<<<< REMOVED player for streamId (69200b21-473a-46f3-a1a8-70034f32dc61). Map size AFTER remove: 0 >>>>>
+[0610月2025 17:16:26.623] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 正在让 僵尸 播放音频流: test.ogg
+[0610月2025 17:16:26.623] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: Creating new ENTITY-FOLLOWING streaming player for streamId (e24600fc-a65d-491a-88bb-eba625fd320c)
+[0610月2025 17:16:26.870] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: Received end signal for streamId (e24600fc-a65d-491a-88bb-eba625fd320c).
+[0610月2025 17:16:30.415] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.StreamingAudioPlayer/]: [e24600fc-a65d-491a-88bb-eba625fd320c] Stream finished playing.
+[0610月2025 17:16:30.415] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.StreamingAudioPlayer/]: [e24600fc-a65d-491a-88bb-eba625fd320c] Player destroyed.
+[0610月2025 17:16:30.415] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: <<<<< REMOVING player for streamId (e24600fc-a65d-491a-88bb-eba625fd320c). Map size BEFORE remove: 1 >>>>>
+[0610月2025 17:16:30.415] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: <<<<< REMOVED player for streamId (e24600fc-a65d-491a-88bb-eba625fd320c). Map size AFTER remove: 0 >>>>>
+[0610月2025 17:16:36.612] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 正在让 僵尸 播放音频流: test.ogg
+[0610月2025 17:16:36.612] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: Creating new ENTITY-FOLLOWING streaming player for streamId (84082e84-eb18-4319-8861-c14fb71fb223)
+[0610月2025 17:16:36.863] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: Received end signal for streamId (84082e84-eb18-4319-8861-c14fb71fb223).
+[0610月2025 17:16:40.364] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.StreamingAudioPlayer/]: [84082e84-eb18-4319-8861-c14fb71fb223] Stream finished playing.
+[0610月2025 17:16:40.365] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.StreamingAudioPlayer/]: [84082e84-eb18-4319-8861-c14fb71fb223] Player destroyed.
+[0610月2025 17:16:40.365] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: <<<<< REMOVING player for streamId (84082e84-eb18-4319-8861-c14fb71fb223). Map size BEFORE remove: 1 >>>>>
+[0610月2025 17:16:40.365] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: <<<<< REMOVED player for streamId (84082e84-eb18-4319-8861-c14fb71fb223). Map size AFTER remove: 0 >>>>>
+[0610月2025 17:16:52.603] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 正在让 僵尸 播放音频流: test.ogg
+[0610月2025 17:16:52.603] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: Creating new ENTITY-FOLLOWING streaming player for streamId (3dfe84cc-9e58-4571-8da5-4328e6c82f78)
+[0610月2025 17:16:52.857] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: Received end signal for streamId (3dfe84cc-9e58-4571-8da5-4328e6c82f78).
+[0610月2025 17:16:56.422] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.StreamingAudioPlayer/]: [3dfe84cc-9e58-4571-8da5-4328e6c82f78] Stream finished playing.
+[0610月2025 17:16:56.422] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.StreamingAudioPlayer/]: [3dfe84cc-9e58-4571-8da5-4328e6c82f78] Player destroyed.
+[0610月2025 17:16:56.422] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: <<<<< REMOVING player for streamId (3dfe84cc-9e58-4571-8da5-4328e6c82f78). Map size BEFORE remove: 1 >>>>>
+[0610月2025 17:16:56.422] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: <<<<< REMOVED player for streamId (3dfe84cc-9e58-4571-8da5-4328e6c82f78). Map size AFTER remove: 0 >>>>>
+[0610月2025 17:17:23.635] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 正在发起音频流: 3.ogg
+[0610月2025 17:17:44.801] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 已将Dev传送至61.380000, 104.000000, 18.900000
+[0610月2025 17:17:49.042] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 正在发起音频流: 3.ogg
+[0610月2025 17:17:49.042] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: >>>>> [MAIN THREAD] Executing startStream for streamId (92d407ef-2e2d-4311-8521-7bf01338c2f1). Map size BEFORE put: 0 <<<<<
+[0610月2025 17:17:49.042] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: >>>>> [MAIN THREAD] Created and PUT new player for streamId (92d407ef-2e2d-4311-8521-7bf01338c2f1). Map size AFTER put: 1 <<<<<
+[0610月2025 17:19:23.169] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: Received command to stop all streams. Cleaning up 1 players.
+[0610月2025 17:19:23.169] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 正在停止你客户端上的所有音频流。
+[0610月2025 17:19:23.170] [Render thread/INFO] [cn.tdogmc.tdogmc_voice.client.StreamingAudioPlayer/]: [92d407ef-2e2d-4311-8521-7bf01338c2f1] Player destroyed.
+[0610月2025 17:19:23.186] [Render thread/WARN] [cn.tdogmc.tdogmc_voice.client.ClientStreamManager/]: Received data chunk for unknown streamId (92d407ef-2e2d-4311-8521-7bf01338c2f1), ignoring.

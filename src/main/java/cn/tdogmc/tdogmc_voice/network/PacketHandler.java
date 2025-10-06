@@ -17,7 +17,6 @@ public class PacketHandler {
             PROTOCOL_VERSION::equals,
             PROTOCOL_VERSION::equals
     );
-
     private static int packetId = 0;
     private static int id() {
         return packetId++;
