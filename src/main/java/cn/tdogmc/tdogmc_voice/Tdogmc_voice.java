@@ -1,11 +1,17 @@
 package cn.tdogmc.tdogmc_voice;
 
-import cn.tdogmc.tdogmc_voice.config.ModConfig; // 确保导入 ModConfig
+import cn.tdogmc.tdogmc_voice.config.ModConfig;
 import cn.tdogmc.tdogmc_voice.network.PacketHandler;
 import cn.tdogmc.tdogmc_voice.network.PlayAudioDataPacket;
 import cn.tdogmc.tdogmc_voice.network.StopAllStreamsS2CPacket;
 import cn.tdogmc.tdogmc_voice.stream.ServerStreamManager;
+import com.mojang.brigadier.CommandDispatcher;
+import com.mojang.brigadier.arguments.FloatArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;
+import com.mojang.brigadier.builder.LiteralArgumentBuilder;
+import com.mojang.brigadier.builder.RequiredArgumentBuilder;
+import com.mojang.brigadier.context.CommandContext;
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
 import com.mojang.logging.LogUtils;
 import net.minecraft.commands.CommandSourceStack;
@@ -16,6 +22,7 @@ import net.minecraft.commands.arguments.coordinates.Vec3Argument;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegisterCommandsEvent;
@@ -36,234 +43,188 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-// @Mod 注解告诉 Forge 这是一个模组的主类。值必须和 mods.toml 中的 modId 一致。
 @Mod(Tdogmc_voice.MODID)
 public class Tdogmc_voice {
 
     public static final String MODID = "tdogmc_voice";
     private static final Logger LOGGER = LogUtils.getLogger();
+    private static final float DEFAULT_AUDIO_RANGE = 64.0f;
+    private static final float DEFAULT_AUDIO_VOLUME = 1.0f;
 
     public Tdogmc_voice() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        // 我们仍然需要监听这个事件，但它的内容变了
         modEventBus.addListener(this::onClientSetup);
-
         MinecraftForge.EVENT_BUS.register(this);
         PacketHandler.register();
         ModLoadingContext.get().registerConfig(Type.SERVER, ModConfig.SPEC, "tdogmc_voice-server.toml");
     }
 
-    // 定义我们存放音频的文件夹
     private static final Path SOUNDS_DIRECTORY = Path.of("sounds");
-
-    /**
-     * 这是我们的自定义建议提供者。
-     * 它负责扫描 sounds 目录并提供文件名列表作为 Tab 补全建议。
-     */
     private static final SuggestionProvider<CommandSourceStack> SOUND_FILE_SUGGESTIONS = (context, builder) -> {
-        // 【这部分代码保持不变】
-        if (!Files.exists(SOUNDS_DIRECTORY)) {
-            try {
-                Files.createDirectories(SOUNDS_DIRECTORY);
-            } catch (IOException e) {
-                return builder.buildFuture();
-            }
-        }
-
-        try (Stream<Path> stream = Files.walk(SOUNDS_DIRECTORY)) {
-            List<String> soundFiles = stream
-                    .filter(Files::isRegularFile) // 过滤，只保留文件
-                    .filter(path -> {
-                        String fileName = path.getFileName().toString();
-                        return fileName.endsWith(".wav") || fileName.endsWith(".ogg"); // 过滤文件类型
-                    })
-                    // --- 核心改动 ---
-                    // 计算文件相对于 sounds 目录的相对路径
-                    .map(path -> SOUNDS_DIRECTORY.relativize(path).toString().replace('\\', '/')) // 转换为相对路径字符串，并将Windows的'\'替换为'/'
-                    .collect(Collectors.toList());
-
-            return SharedSuggestionProvider.suggest(soundFiles, builder);
-
-        } catch (IOException e) {
-            LOGGER.error("无法读取 sounds 文件夹以提供建议", e);
-            return builder.buildFuture();
-        }
-        // --- 修改到这里结束 ---
+        if (!Files.exists(SOUNDS_DIRECTORY)) { try { Files.createDirectories(SOUNDS_DIRECTORY); } catch (IOException e) { return builder.buildFuture(); } } try (Stream<Path> stream = Files.walk(SOUNDS_DIRECTORY)) { List<String> soundFiles = stream .filter(Files::isRegularFile) .filter(path -> { String fileName = path.getFileName().toString(); return fileName.endsWith(".wav") || fileName.endsWith(".ogg"); }) .map(path -> SOUNDS_DIRECTORY.relativize(path).toString().replace('\\', '/')) .collect(Collectors.toList()); return SharedSuggestionProvider.suggest(soundFiles, builder); } catch (IOException e) { LOGGER.error("无法读取 sounds 文件夹以提供建议", e); return builder.buildFuture(); }
     };
 
     private void onClientSetup(final FMLClientSetupEvent event) {
-        // 这个方法现在是空的，因为 ClientStreamManager 会自动注册自己
-        // 我们可以留一句日志来确认客户端设置事件确实被触发了
         LOGGER.info("Tdogmc_voice client setup event fired.");
     }
 
     @SubscribeEvent
     public void onCommandsRegister(RegisterCommandsEvent event) {
-        event.getDispatcher().register(Commands.literal("playaudio3d")
+        CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
+
+        registerCommandWithOptionalArgs(dispatcher, "playaudio3d", Commands.argument("position", Vec3Argument.vec3()), this::executePlayAudio3dCommand);
+        registerCommandWithOptionalArgs(dispatcher, "playstream", Commands.argument("position", Vec3Argument.vec3()), this::executePlayStreamCommand);
+        registerCommandWithOptionalArgs(dispatcher, "playstream_entity", Commands.argument("target", EntityArgument.entity()), this::executePlayStreamEntityCommand);
+
+        dispatcher.register(Commands.literal("stopstreams")
                 .requires(source -> source.hasPermission(2))
-                .then(Commands.argument("position", Vec3Argument.vec3())
-                        .then(Commands.argument("soundFile", StringArgumentType.string())
-                                // 【修改点1】将 SuggestionProvider 添加到指令参数
-                                .suggests(SOUND_FILE_SUGGESTIONS)
-                                .executes(context -> {
-                                    CommandSourceStack source = context.getSource();
-                                    Vec3 position = Vec3Argument.getVec3(context, "position");
-                                    String soundFileName = StringArgumentType.getString(context, "soundFile");
-
-                                    String normalizedSoundPath = soundFileName.replace('\\', '/');
-
-                                    // 严禁路径中包含 ".." 来返回上级目录
-                                    if (normalizedSoundPath.contains("..")) {
-                                        source.sendFailure(Component.literal("错误：文件路径不能包含 '..'！"));
-                                        return 0;
-                                    }
-                                    // 严禁路径以 '/' 开头，防止绝对路径攻击
-                                    if (normalizedSoundPath.startsWith("/")) {
-                                        source.sendFailure(Component.literal("错误：文件路径不能以 '/' 开头！"));
-                                        return 0;
-                                    }
-
-                                    try {
-                                        // --- 修改这里的路径构建 ---
-                                        // 直接将 sounds 目录与用户提供的相对路径拼接起来
-                                        Path audioPath = SOUNDS_DIRECTORY.resolve(normalizedSoundPath);
-
-                                        // 添加一个额外的安全检查，确保最终解析的路径确实在 sounds 目录之内
-                                        if (!audioPath.toAbsolutePath().normalize().startsWith(SOUNDS_DIRECTORY.toAbsolutePath().normalize())) {
-                                            source.sendFailure(Component.literal("错误：检测到非法的路径遍历尝试！"));
-                                            return 0;
-                                        }
-
-                                        if (!Files.exists(audioPath) || !Files.isRegularFile(audioPath)) {
-                                            source.sendFailure(Component.literal("错误: 文件 " + normalizedSoundPath + " 未找到或不是一个有效文件！"));
-                                            return 0;
-                                        }
-
-                                        byte[] audioData = Files.readAllBytes(audioPath);
-                                        PlayAudioDataPacket packet = new PlayAudioDataPacket(audioData, position.x, position.y, position.z);
-
-                                        ServerLevel level = source.getLevel();
-                                        for (ServerPlayer player : level.players()) {
-                                            if (player.position().distanceToSqr(position) < 64 * 64) {
-                                                PacketHandler.sendToPlayer(packet, player);
-                                            }
-                                        }
-
-                                        // --- 【修改点2】在这里添加对 debug 模式的判断 ---
-                                        // 只有当 debugMode 开启时，才发送成功反馈消息和打印日志
-                                        if (ModConfig.DEBUG_MODE.get()) {
-                                            source.sendSuccess(() -> Component.literal("在坐标 " + String.format("%.1f, %.1f, %.1f", position.x, position.y, position.z) + " 播放 " + soundFileName), true);
-                                            LOGGER.info("在坐标 ({}, {}, {}) 播放了音频文件 {}", String.format("%.1f", position.x), String.format("%.1f", position.y), String.format("%.1f", position.z), soundFileName);
-                                        }
-
-                                        return 1;
-
-                                    } catch (IOException e) {
-                                        // 错误信息应该总是显示
-                                        source.sendFailure(Component.literal("读取音频文件时发生错误！请检查后台日志。"));
-                                        LOGGER.error("读取音频文件 {} 时出错:", soundFileName, e);
-                                        return 0;
-                                    }
-                                })
-                        )
-                )
-        );
-        event.getDispatcher().register(Commands.literal("playstream")
-                .requires(source -> source.hasPermission(2))
-                .then(Commands.argument("position", Vec3Argument.vec3())
-                        .then(Commands.argument("soundFile", StringArgumentType.string())
-                                .suggests(SOUND_FILE_SUGGESTIONS) // 复用我们之前的 Tab 补全
-                                .executes(context -> {
-                                    CommandSourceStack source = context.getSource();
-                                    Vec3 position = Vec3Argument.getVec3(context, "position");
-                                    String soundFileName = StringArgumentType.getString(context, "soundFile");
-
-                                    // ... （可以复用之前的安全检查） ...
-                                    if (soundFileName.contains("..") || soundFileName.startsWith("/")) {
-                                        source.sendFailure(Component.literal("错误：文件路径无效！"));
-                                        return 0;
-                                    }
-
-                                    // 调用 ServerStreamManager 来发起流，而不是自己读取文件
-                                    ServerStreamManager.startStream(source.getLevel(), position, soundFileName);
-
-                                    if (ModConfig.DEBUG_MODE.get()) {
-                                        source.sendSuccess(() -> Component.literal("正在发起音频流: " + soundFileName), true);
-                                    }
-
-                                    return 1;
-                                })
-                        )
-                )
-        );
-
-        // --- 经过优化的 /stopstreams 指令 ---
-        event.getDispatcher().register(Commands.literal("stopstreams")
-                .requires(source -> source.hasPermission(2))
-                // 1. 无参数执行: 目标为执行者自己
                 .executes(context -> {
                     CommandSourceStack source = context.getSource();
-                    // 检查指令执行者是否是一个玩家
                     if (source.getEntity() instanceof ServerPlayer player) {
-                        // 如果是，只向这个玩家发送停止数据包
                         PacketHandler.sendToPlayer(new StopAllStreamsS2CPacket(), player);
-
-                        if (ModConfig.DEBUG_MODE.get()) {
-                            source.sendSuccess(() -> Component.literal("正在停止你客户端上的所有音频流。"), true);
-                        }
+                        if (ModConfig.DEBUG_MODE.get()) { source.sendSuccess(() -> Component.literal("正在停止你客户端上的所有音频流。"), true); }
                         return 1;
                     } else {
-                        // 如果执行者是控制台，给出更有用的提示
                         source.sendFailure(Component.literal("从控制台执行此指令需要指定一个目标玩家 (例如 /stopstreams @a)"));
-                        return 0; // 返回 0 表示指令执行失败
+                        return 0;
                     }
                 })
-                // 2. 带玩家参数执行: 目标为指定的玩家
                 .then(Commands.argument("targets", EntityArgument.players())
                         .executes(context -> {
                             CommandSourceStack source = context.getSource();
                             Collection<ServerPlayer> targets = EntityArgument.getPlayers(context, "targets");
-
-                            // 遍历所有目标玩家并发送数据包
                             for (ServerPlayer player : targets) {
                                 PacketHandler.sendToPlayer(new StopAllStreamsS2CPacket(), player);
                             }
-
-                            if (ModConfig.DEBUG_MODE.get()) {
-                                source.sendSuccess(() -> Component.literal("已向 " + targets.size() + " 名玩家发送停止音频流的指令。"), true);
-                            }
+                            if (ModConfig.DEBUG_MODE.get()) { source.sendSuccess(() -> Component.literal("已向 " + targets.size() + " 名玩家发送停止音频流的指令。"), true); }
                             return targets.size();
                         })
                 )
         );
+    }
 
-        event.getDispatcher().register(Commands.literal("playstream_entity")
-                .requires(source -> source.hasPermission(2))
-                // 第一个参数：目标实体
-                .then(Commands.argument("target", net.minecraft.commands.arguments.EntityArgument.entity())
-                        .then(Commands.argument("soundFile", StringArgumentType.string())
-                                .suggests(SOUND_FILE_SUGGESTIONS)
-                                .executes(context -> {
-                                    CommandSourceStack source = context.getSource();
-                                    // 获取目标实体
-                                    net.minecraft.world.entity.Entity targetEntity = net.minecraft.commands.arguments.EntityArgument.getEntity(context, "target");
-                                    String soundFileName = StringArgumentType.getString(context, "soundFile");
+    private <T> void registerCommandWithOptionalArgs(CommandDispatcher<CommandSourceStack> dispatcher, String commandName, RequiredArgumentBuilder<CommandSourceStack, T> firstArgument, CommandExecutor executor) {
+        LiteralArgumentBuilder<CommandSourceStack> command = Commands.literal(commandName)
+                .requires(source -> source.hasPermission(2));
 
-                                    if (soundFileName.contains("..") || soundFileName.startsWith("/")) {
-                                        source.sendFailure(Component.literal("错误：文件路径无效！"));
-                                        return 0;
-                                    }
+        RequiredArgumentBuilder<CommandSourceStack, String> soundFileArg = Commands.argument("soundFile", StringArgumentType.string())
+                .suggests(SOUND_FILE_SUGGESTIONS);
 
-                                    // 调用新的 ServerStreamManager 方法
-                                    ServerStreamManager.startStream(source.getLevel(), targetEntity, soundFileName);
+        // --- 核心修正：构建一个可以互相链接的指令树 ---
 
-                                    if (ModConfig.DEBUG_MODE.get()) {
-                                        source.sendSuccess(() -> Component.literal("正在让 " + targetEntity.getName().getString() + " 播放音频流: " + soundFileName), true);
-                                    }
-                                    return 1;
-                                })
-                        )
+        // 1. 定义最终执行的节点
+        var rangeValueNode = Commands.argument("range", FloatArgumentType.floatArg(0)).executes(executor::execute);
+        var volumeValueNode = Commands.argument("volume", FloatArgumentType.floatArg(0)).executes(executor::execute);
+
+        // 2. 让它们可以互相链接
+        // 在 `-r <range>` 之后，可以跟 `-v <volume>`
+        rangeValueNode.then(
+                Commands.literal("-v").then(
+                        Commands.argument("volume", FloatArgumentType.floatArg(0)).executes(executor::execute)
                 )
         );
+        // 在 `-v <volume>` 之后，可以跟 `-r <range>`
+        volumeValueNode.then(
+                Commands.literal("-r").then(
+                        Commands.argument("range", FloatArgumentType.floatArg(0)).executes(executor::execute)
+                )
+        );
+
+        // 3. 将这些分支挂载到 soundFile 参数下
+        soundFileArg.then(Commands.literal("-r").then(rangeValueNode));
+        soundFileArg.then(Commands.literal("-v").then(volumeValueNode));
+
+        // 4. 不要忘记最基础的情况：只有 soundFile 参数
+        soundFileArg.executes(executor::execute);
+
+        // 5. 组装最终指令
+        command.then(firstArgument.then(soundFileArg));
+        dispatcher.register(command);
+    }
+
+    private int executePlayAudio3dCommand(CommandContext<CommandSourceStack> context) throws CommandSyntaxException {
+        float range = getFloatArgument(context, "range", DEFAULT_AUDIO_RANGE);
+        float volume = getFloatArgument(context, "volume", DEFAULT_AUDIO_VOLUME);
+        Vec3 position = Vec3Argument.getVec3(context, "position");
+        String soundFile = StringArgumentType.getString(context, "soundFile");
+
+        return executePlayAudio3dLogic(context.getSource(), position, soundFile, range, volume);
+    }
+
+    private int executePlayStreamCommand(CommandContext<CommandSourceStack> context) throws CommandSyntaxException {
+        float range = getFloatArgument(context, "range", DEFAULT_AUDIO_RANGE);
+        float volume = getFloatArgument(context, "volume", DEFAULT_AUDIO_VOLUME);
+        Vec3 position = Vec3Argument.getVec3(context, "position");
+        String soundFile = StringArgumentType.getString(context, "soundFile");
+
+        ServerStreamManager.startStream(context.getSource().getLevel(), position, soundFile, range, volume);
+        if (ModConfig.DEBUG_MODE.get()) {
+            context.getSource().sendSuccess(() -> Component.literal("正在发起音频流: " + soundFile), true);
+        }
+        return 1;
+    }
+
+    private int executePlayStreamEntityCommand(CommandContext<CommandSourceStack> context) throws CommandSyntaxException {
+        float range = getFloatArgument(context, "range", DEFAULT_AUDIO_RANGE);
+        float volume = getFloatArgument(context, "volume", DEFAULT_AUDIO_VOLUME);
+        Entity target = EntityArgument.getEntity(context, "target");
+        String soundFile = StringArgumentType.getString(context, "soundFile");
+
+        ServerStreamManager.startStream(context.getSource().getLevel(), target, soundFile, range, volume);
+        if (ModConfig.DEBUG_MODE.get()) {
+            context.getSource().sendSuccess(() -> Component.literal("正在让 " + target.getName().getString() + " 播放音频流"), true);
+        }
+        return 1;
+    }
+
+    private int executePlayAudio3dLogic(CommandSourceStack source, Vec3 position, String soundFileName, float range, float volume) {
+        String normalizedSoundPath = soundFileName.replace('\\', '/');
+        if (normalizedSoundPath.contains("..") || normalizedSoundPath.startsWith("/")) {
+            source.sendFailure(Component.literal("错误：文件路径无效！"));
+            return 0;
+        }
+        try {
+            Path audioPath = SOUNDS_DIRECTORY.resolve(normalizedSoundPath);
+            if (!audioPath.toAbsolutePath().normalize().startsWith(SOUNDS_DIRECTORY.toAbsolutePath().normalize())) {
+                source.sendFailure(Component.literal("错误：检测到非法的路径遍历尝试！"));
+                return 0;
+            }
+            if (!Files.exists(audioPath) || !Files.isRegularFile(audioPath)) {
+                source.sendFailure(Component.literal("错误: 文件 " + normalizedSoundPath + " 未找到！"));
+                return 0;
+            }
+
+            byte[] audioData = Files.readAllBytes(audioPath);
+            PlayAudioDataPacket packet = new PlayAudioDataPacket(audioData, position.x, position.y, position.z, range, volume);
+
+            ServerLevel level = source.getLevel();
+            for (ServerPlayer player : level.players()) {
+                if (player.position().distanceToSqr(position) < range * range) {
+                    PacketHandler.sendToPlayer(packet, player);
+                }
+            }
+
+            if (ModConfig.DEBUG_MODE.get()) {
+                source.sendSuccess(() -> Component.literal(String.format("播放 %s 于 %.1f,%.1f,%.1f (范围:%.1f, 音量:%.1f)", soundFileName, position.x, position.y, position.z, range, volume)), true);
+            }
+            return 1;
+        } catch (IOException e) {
+            source.sendFailure(Component.literal("读取音频文件时发生错误！"));
+            LOGGER.error("读取音频文件 {} 时出错:", soundFileName, e);
+            return 0;
+        }
+    }
+
+    private float getFloatArgument(CommandContext<CommandSourceStack> context, String name, float defaultValue) {
+        try {
+            return FloatArgumentType.getFloat(context, name);
+        } catch (IllegalArgumentException e) {
+            return defaultValue;
+        }
+    }
+
+    @FunctionalInterface
+    private interface CommandExecutor {
+        int execute(CommandContext<CommandSourceStack> context) throws CommandSyntaxException;
     }
 }

@@ -33,29 +33,24 @@ public class StreamingAudioPlayer {
     private final int[] bufferIds;
     private final Queue<Integer> freeBuffers = new LinkedList<>();
     private final UUID followedEntityId;
-
-    // --- 核心状态变量 ---
     private final ByteArrayOutputStream oggDataStream = new ByteArrayOutputStream();
     private ByteBuffer vorbisDataBuffer;
     private long vorbisHandle = MemoryUtil.NULL;
     private STBVorbisInfo vorbisInfo;
     private volatile boolean isDestroyed = false;
-
     private final AtomicBoolean streamFileFinished = new AtomicBoolean(false);
     private final AtomicBoolean hasNewData = new AtomicBoolean(false);
     private long lastSampleOffset = 0;
 
-    // 构造函数1: 静态位置
-    public StreamingAudioPlayer(UUID streamId, double x, double y, double z) {
-        this(streamId, null, x, y, z, true);
+    public StreamingAudioPlayer(UUID streamId, double x, double y, double z, float range, float volume) {
+        this(streamId, null, x, y, z, true, range, volume);
     }
 
-    // 构造函数2: 实体跟随
-    public StreamingAudioPlayer(UUID streamId, UUID entityToFollow) {
-        this(streamId, entityToFollow, 0, 0, 0, false);
+    public StreamingAudioPlayer(UUID streamId, UUID entityToFollow, float range, float volume) {
+        this(streamId, entityToFollow, 0, 0, 0, false, range, volume);
     }
 
-    private StreamingAudioPlayer(UUID streamId, UUID entityToFollow, double x, double y, double z, boolean setInitialPosition) {
+    private StreamingAudioPlayer(UUID streamId, UUID entityToFollow, double x, double y, double z, boolean setInitialPosition, float range, float volume) {
         this.streamId = streamId;
         this.followedEntityId = entityToFollow;
 
@@ -66,7 +61,8 @@ public class StreamingAudioPlayer {
         AL10.alSourcei(sourceId, AL10.AL_SOURCE_RELATIVE, AL10.AL_FALSE);
         AL10.alSourcef(sourceId, AL10.AL_ROLLOFF_FACTOR, 1.0f);
         AL10.alSourcef(sourceId, AL10.AL_REFERENCE_DISTANCE, 16.0f);
-        AL10.alSourcef(sourceId, AL10.AL_MAX_DISTANCE, 64.0f);
+        AL10.alSourcef(sourceId, AL10.AL_MAX_DISTANCE, range);
+        AL10.alSourcef(sourceId, AL10.AL_GAIN, volume); // 设置音量
 
         this.bufferIds = new int[BUFFER_COUNT];
         for (int i = 0; i < BUFFER_COUNT; i++) {
@@ -91,32 +87,21 @@ public class StreamingAudioPlayer {
 
     public void update() {
         if (isDestroyed) return;
-
         updateEntityPosition();
-
-        // 检查是否有新数据到达，并据此刷新解码器
         if (hasNewData.getAndSet(false)) {
             refreshDecoder();
         }
-
         if (vorbisHandle != MemoryUtil.NULL) {
-            // 回收已播放完的缓冲区
             int processedCount = AL10.alGetSourcei(sourceId, AL10.AL_BUFFERS_PROCESSED);
             for (int i = 0; i < processedCount; i++) {
                 freeBuffers.offer(AL10.alSourceUnqueueBuffers(sourceId));
             }
-
-            // 填充所有可用的缓冲区
             fillBuffers();
         }
-
-        // 检查并设置播放状态
         int state = AL10.alGetSourcei(sourceId, AL10.AL_SOURCE_STATE);
         if (state != AL10.AL_PLAYING && AL10.alGetSourcei(sourceId, AL10.AL_BUFFERS_QUEUED) > 0) {
             AL10.alSourcePlay(sourceId);
         }
-
-        // 检查流是否已完全结束
         checkStreamEnd();
     }
 
@@ -134,20 +119,17 @@ public class StreamingAudioPlayer {
                 vorbisDataBuffer = null;
             }
         }
-
         byte[] currentOggData = oggDataStream.toByteArray();
         if (currentOggData.length == 0) return;
-
         vorbisDataBuffer = MemoryUtil.memAlloc(currentOggData.length).put(currentOggData).flip();
-
         try (MemoryStack stack = MemoryStack.stackPush()) {
             IntBuffer error = stack.mallocInt(1);
             vorbisHandle = STBVorbis.stb_vorbis_open_memory(vorbisDataBuffer, error, null);
-
             if (vorbisHandle != MemoryUtil.NULL) {
                 vorbisInfo = STBVorbisInfo.malloc();
                 STBVorbis.stb_vorbis_get_info(vorbisHandle, vorbisInfo);
-                STBVorbis.stb_vorbis_seek(vorbisHandle, (int) lastSampleOffset); // 跳转回上次播放的位置
+                // --- FIX: Cast long to int ---
+                STBVorbis.stb_vorbis_seek(vorbisHandle, (int) lastSampleOffset);
             } else {
                 LOGGER.warn("[{}] Failed to open OGG memory stream with {} bytes. Error: {}", streamId, currentOggData.length, error.get(0));
             }
@@ -158,18 +140,15 @@ public class StreamingAudioPlayer {
         while (!freeBuffers.isEmpty()) {
             ShortBuffer pcmBuffer = MemoryUtil.memAllocShort(PCM_CHUNK_SIZE_SAMPLES * vorbisInfo.channels());
             int samplesRead = STBVorbis.stb_vorbis_get_samples_short_interleaved(vorbisHandle, vorbisInfo.channels(), pcmBuffer);
-
             if (samplesRead == 0) {
                 MemoryUtil.memFree(pcmBuffer);
-                break; // 没有更多样本可读了
+                break;
             }
-
             Integer bufferId = freeBuffers.poll();
             if (bufferId == null) {
                 MemoryUtil.memFree(pcmBuffer);
                 break;
             }
-
             pcmBuffer.limit(samplesRead * vorbisInfo.channels());
             int format = (vorbisInfo.channels() == 1) ? AL10.AL_FORMAT_MONO16 : AL10.AL_FORMAT_STEREO16;
             AL10.alBufferData(bufferId, format, pcmBuffer, vorbisInfo.sample_rate());
@@ -195,8 +174,6 @@ public class StreamingAudioPlayer {
         if (streamFileFinished.get() && vorbisHandle != MemoryUtil.NULL) {
             long currentOffset = STBVorbis.stb_vorbis_get_sample_offset(vorbisHandle);
             long totalSamples = STBVorbis.stb_vorbis_stream_length_in_samples(vorbisHandle);
-
-            // 当所有数据都已解码，并且OpenAL缓冲区也播放完毕时
             if (currentOffset >= totalSamples && AL10.alGetSourcei(sourceId, AL10.AL_BUFFERS_QUEUED) == 0) {
                 int state = AL10.alGetSourcei(sourceId, AL10.AL_SOURCE_STATE);
                 if (state != AL10.AL_PLAYING) {
@@ -227,22 +204,18 @@ public class StreamingAudioPlayer {
     public void destroy() {
         if (isDestroyed) return;
         isDestroyed = true;
-
         Minecraft.getInstance().execute(() -> {
             AL10.alSourceStop(sourceId);
-
             int queued = AL10.alGetSourcei(sourceId, AL10.AL_BUFFERS_QUEUED);
             if (queued > 0) {
                 IntBuffer buffers = MemoryUtil.memAllocInt(queued);
                 AL10.alSourceUnqueueBuffers(sourceId, buffers);
                 MemoryUtil.memFree(buffers);
             }
-
             AL10.alDeleteSources(sourceId);
             for (int bufferId : bufferIds) {
                 AL10.alDeleteBuffers(bufferId);
             }
-
             if (vorbisHandle != MemoryUtil.NULL) {
                 STBVorbis.stb_vorbis_close(vorbisHandle);
                 vorbisHandle = MemoryUtil.NULL;

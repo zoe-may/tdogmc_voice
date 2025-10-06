@@ -146,6 +146,7 @@ Writing Output: D:\MC\tdogmc_mod\tdogmc_voice\build\reobfJar\output.jar
   cn/
   cn/tdogmc/
   cn/tdogmc/tdogmc_voice/
+  cn/tdogmc/tdogmc_voice/Tdogmc_voice$CommandExecutor.class
   cn/tdogmc/tdogmc_voice/Tdogmc_voice.class
   cn/tdogmc/tdogmc_voice/client/
   cn/tdogmc/tdogmc_voice/client/ClientStreamManager.class
