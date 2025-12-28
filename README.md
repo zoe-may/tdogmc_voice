@@ -76,6 +76,14 @@
 | `debugMode` | Boolean | `false` | 开启后输出详细的解码与网络包日志 |
 | `logBasicInfo` | Boolean | `true` | 记录音频开始/结束的基本信息 |
 
+## 🤖 开发声明与鸣谢
+
+本项目采用 **AI 氛围编程 (AI-Vibe Coding)** 模式开发，**90% 的代码由 AI 撰写完成**。
+
+特别鸣谢：
+*   **Google**
+*   **Gemini 3 Pro**
+
 ## 许可证
 
 本项目采用 [GNU General Public License v3.0 (GPLv3)](LICENSE) 开源。
