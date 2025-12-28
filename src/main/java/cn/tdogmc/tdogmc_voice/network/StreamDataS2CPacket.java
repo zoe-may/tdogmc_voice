@@ -1,15 +1,12 @@
 package cn.tdogmc.tdogmc_voice.network;
 
-import cn.tdogmc.tdogmc_voice.client.ClientStreamManager;
+import cn.tdogmc.tdogmc_voice.client.AudioEngine;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.network.NetworkEvent;
 
 import java.util.UUID;
 import java.util.function.Supplier;
 
-/**
- * [S2C] 服务端向客户端发送一个音频数据块。
- */
 public class StreamDataS2CPacket {
 
     private final UUID streamId;
@@ -22,7 +19,7 @@ public class StreamDataS2CPacket {
 
     public StreamDataS2CPacket(FriendlyByteBuf buf) {
         this.streamId = buf.readUUID();
-        this.data = buf.readByteArray(); // readByteArray 适用于小数据块
+        this.data = buf.readByteArray();
     }
 
     public void toBytes(FriendlyByteBuf buf) {
@@ -32,8 +29,8 @@ public class StreamDataS2CPacket {
 
     public boolean handle(Supplier<NetworkEvent.Context> supplier) {
         supplier.get().enqueueWork(() -> {
-            // 调用客户端流管理器来处理这个数据块
-            ClientStreamManager.handleDataChunk(streamId, data);
+            // 【修正】这里是 receiveData，不是 startStream
+            AudioEngine.getInstance().receiveData(streamId, data);
         });
         return true;
     }

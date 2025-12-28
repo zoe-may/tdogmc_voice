@@ -63,14 +63,30 @@ public class SoundFileCache {
         watcherThread = new Thread(() -> {
             try (WatchService watchService = FileSystems.getDefault().newWatchService()) {
                 SOUNDS_DIR.register(watchService, StandardWatchEventKinds.ENTRY_CREATE, StandardWatchEventKinds.ENTRY_DELETE);
+
+                long lastChangeTime = 0;
+                boolean pendingUpdate = false;
+
                 while (!Thread.currentThread().isInterrupted()) {
-                    WatchKey key = watchService.take();
-                    boolean updateNeeded = false;
-                    for (WatchEvent<?> event : key.pollEvents()) {
-                        if (event.kind() != StandardWatchEventKinds.OVERFLOW) updateNeeded = true;
+                    // 使用带超时的 poll，每 500ms 醒来检查一次是否需要更新
+                    WatchKey key = watchService.poll(500, java.util.concurrent.TimeUnit.MILLISECONDS);
+
+                    if (key != null) {
+                        for (WatchEvent<?> event : key.pollEvents()) {
+                            if (event.kind() != StandardWatchEventKinds.OVERFLOW) {
+                                lastChangeTime = System.currentTimeMillis();
+                                pendingUpdate = true;
+                            }
+                        }
+                        if (!key.reset()) break;
                     }
-                    if (updateNeeded) scanFiles();
-                    if (!key.reset()) break;
+
+                    // 防抖动逻辑：只有当有更新挂起，且距离上次变化超过 500ms 时才执行扫描
+                    if (pendingUpdate && (System.currentTimeMillis() - lastChangeTime > 500)) {
+                        scanFiles();
+                        pendingUpdate = false;
+                        LOGGER.info("Sound cache updated.");
+                    }
                 }
             } catch (IOException | InterruptedException ignored) {}
         }, "Sound-Watcher-Thread");

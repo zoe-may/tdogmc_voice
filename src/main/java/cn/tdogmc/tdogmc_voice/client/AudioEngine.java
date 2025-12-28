@@ -1,7 +1,6 @@
 package cn.tdogmc.tdogmc_voice.client;
 
 import cn.tdogmc.tdogmc_voice.config.ModConfig;
-import cn.tdogmc.tdogmc_voice.network.StartStreamS2CPacket;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.Vec3;
@@ -43,7 +42,7 @@ public class AudioEngine {
 
     @SubscribeEvent
     public void onSoundEngineLoad(SoundEngineLoadEvent event) {
-        LOGGER.info("Sound Engine loaded/reloaded. Resetting AudioEngine.");
+        LOGGER.info("[AudioEngine] Sound Engine loaded. Resetting.");
         stopAll();
         sourcePool.clear();
         isInitialized = false;
@@ -72,7 +71,7 @@ public class AudioEngine {
 
         if (!sourcePool.isEmpty()) {
             isInitialized = true;
-            LOGGER.info("AudioEngine initialized successfully with {} hardware sources.", sourcePool.size());
+            LOGGER.info("[AudioEngine] Initialized with {} sources.", sourcePool.size());
             return true;
         }
         return false;
@@ -88,31 +87,31 @@ public class AudioEngine {
 
             while (it.hasNext()) {
                 AudioStream stream = it.next().getValue();
+                stream.tick(camPos);
+
                 if (stream.isDone()) {
                     stream.dispose();
                     it.remove();
-                } else {
-                    stream.tick(camPos);
                 }
             }
         }
     }
 
-    public void startStream(UUID id, double x, double y, double z, float range, float volume) {
+    public void startStream(UUID id, double x, double y, double z, float range, float volume, float pitch) {
         if (!isInitialized && !tryInitSourcePool()) return;
         Minecraft.getInstance().execute(() -> {
             if (streams.containsKey(id)) streams.remove(id).dispose();
-            LOGGER.info("Client starting stream {} at {},{},{}", id, x, y, z);
-            streams.put(id, new AudioStream(id, new Vec3(x, y, z), null, range, volume));
+            LOGGER.info("[Stream {}] START (Static Pos)", id);
+            streams.put(id, new AudioStream(id, new Vec3(x, y, z), null, range, volume, pitch));
         });
     }
 
-    public void startStream(UUID id, UUID entityId, float range, float volume) {
+    public void startStream(UUID id, UUID entityId, float range, float volume, float pitch) {
         if (!isInitialized && !tryInitSourcePool()) return;
         Minecraft.getInstance().execute(() -> {
             if (streams.containsKey(id)) streams.remove(id).dispose();
-            LOGGER.info("Client starting stream {} following entity {}", id, entityId);
-            streams.put(id, new AudioStream(id, null, entityId, range, volume));
+            LOGGER.info("[Stream {}] START (Follow Entity)", id);
+            streams.put(id, new AudioStream(id, null, entityId, range, volume, pitch));
         });
     }
 
@@ -127,6 +126,7 @@ public class AudioEngine {
     }
 
     public void stopAll() {
+        LOGGER.info("[AudioEngine] Stopping all streams.");
         streams.values().forEach(AudioStream::dispose);
         streams.clear();
     }
@@ -137,9 +137,11 @@ public class AudioEngine {
         private final UUID entityId;
         private final float range;
         private final float volume;
+        private final float pitch;
 
         private ByteBuffer vorbisBuffer;
         private int writeCursor = 0;
+        private int lastOpenCursor = 0;
         private final Queue<byte[]> incomingQueue = new ConcurrentLinkedQueue<>();
 
         private int sourceId = -1;
@@ -148,18 +150,21 @@ public class AudioEngine {
         private STBVorbisInfo info;
 
         private int totalSamplesDecoded = 0;
-
         private boolean inputFinished = false;
+        private boolean decoderFinished = false;
         private boolean disposed = false;
-        private boolean hasStartedPlaying = false;
 
-        public AudioStream(UUID id, Vec3 pos, UUID entityId, float range, float volume) {
+        private long bufferAddress = 0;
+
+        public AudioStream(UUID id, Vec3 pos, UUID entityId, float range, float volume, float pitch) {
             this.id = id;
             this.staticPos = pos;
             this.entityId = entityId;
             this.range = range;
             this.volume = volume;
-            this.vorbisBuffer = MemoryUtil.memAlloc(1024 * 1024);
+            this.pitch = pitch;
+            this.vorbisBuffer = MemoryUtil.memAlloc(4 * 1024 * 1024);
+            this.bufferAddress = MemoryUtil.memAddress(vorbisBuffer);
         }
 
         public void pushData(byte[] data) {
@@ -167,14 +172,20 @@ public class AudioEngine {
         }
 
         public void markFinished() {
-            this.inputFinished = true;
+            if (!this.inputFinished) {
+                this.inputFinished = true;
+                if (ModConfig.LOG_BASIC_INFO.get()) LOGGER.info("[Stream {}] Received EOS signal.", id);
+            }
         }
 
         public boolean isDone() {
             if (disposed) return true;
-            if (inputFinished && incomingQueue.isEmpty() && sourceId != -1) {
+            if (inputFinished && decoderFinished && sourceId != -1) {
+                int queued = AL10.alGetSourcei(sourceId, AL10.AL_BUFFERS_QUEUED);
                 int state = AL10.alGetSourcei(sourceId, AL10.AL_SOURCE_STATE);
-                return state == AL10.AL_STOPPED && AL10.alGetSourcei(sourceId, AL10.AL_BUFFERS_QUEUED) == 0;
+                if (queued == 0 || state == AL10.AL_STOPPED) {
+                    return true;
+                }
             }
             return false;
         }
@@ -182,129 +193,124 @@ public class AudioEngine {
         public void tick(Vec3 listenerPos) {
             if (disposed) return;
 
-            boolean memoryReallocated = false;
+            boolean pointerChanged = false;
+            boolean hasNewData = false;
+
             while (!incomingQueue.isEmpty()) {
                 byte[] data = incomingQueue.poll();
-
-                if (writeCursor == 0 && data.length > 4 && data[0] == 'R' && data[1] == 'I' && data[2] == 'F' && data[3] == 'F') {
-                    LOGGER.warn("Stream {} appears to be WAV format. Skipped.", id);
-                    dispose();
-                    return;
-                }
-
                 if (vorbisBuffer.remaining() < data.length) {
-                    if (vorbisHandle != MemoryUtil.NULL) {
-                        STBVorbis.stb_vorbis_close(vorbisHandle);
-                        vorbisHandle = MemoryUtil.NULL;
-                    }
-
-                    int newCap = Math.max(vorbisBuffer.capacity() * 2, writeCursor + data.length + 64 * 1024);
+                    int newCap = Math.max(vorbisBuffer.capacity() * 2, writeCursor + data.length + 65536);
                     ByteBuffer newBuf = MemoryUtil.memRealloc(vorbisBuffer, newCap);
-                    if (newBuf == null) {
-                        LOGGER.error("Failed to realloc memory for stream {}", id);
-                        dispose();
-                        return;
-                    }
+                    if (newBuf == null) { dispose(); return; }
                     vorbisBuffer = newBuf;
-                    memoryReallocated = true;
+                    pointerChanged = (MemoryUtil.memAddress(vorbisBuffer) != bufferAddress);
+                    bufferAddress = MemoryUtil.memAddress(vorbisBuffer);
                 }
                 vorbisBuffer.position(writeCursor);
                 vorbisBuffer.put(data);
                 writeCursor += data.length;
+                hasNewData = true;
             }
 
-            if (writeCursor > 0 && (vorbisHandle == MemoryUtil.NULL || memoryReallocated)) {
-                try (MemoryStack stack = MemoryStack.stackPush()) {
-                    IntBuffer error = stack.mallocInt(1);
-                    ByteBuffer slice = vorbisBuffer.duplicate();
-                    slice.position(0);
-                    slice.limit(writeCursor);
+            boolean needsReopen = (vorbisHandle == MemoryUtil.NULL);
+            if (!needsReopen && (pointerChanged || (hasNewData && writeCursor > lastOpenCursor))) {
+                needsReopen = true;
+            }
 
-                    long handle = STBVorbis.stb_vorbis_open_memory(slice, error, null);
-
-                    if (handle != MemoryUtil.NULL) {
-                        vorbisHandle = handle;
-                        if (info == null) {
-                            info = STBVorbisInfo.malloc();
-                            STBVorbis.stb_vorbis_get_info(vorbisHandle, info);
-                        }
-                        if (memoryReallocated && totalSamplesDecoded > 0) {
-                            STBVorbis.stb_vorbis_seek(vorbisHandle, totalSamplesDecoded);
-                        }
-                    }
-                }
+            if (needsReopen && writeCursor > 0) {
+                reopenDecoder();
             }
 
             if (sourceId == -1 && vorbisHandle != MemoryUtil.NULL && !sourcePool.isEmpty()) {
-                Integer s = sourcePool.poll();
-                if (s != null) {
-                    sourceId = s;
-                    buffers[0] = AL10.alGenBuffers();
-                    buffers[1] = AL10.alGenBuffers();
-                    buffers[2] = AL10.alGenBuffers();
-                    AL10.alSourcei(sourceId, AL10.AL_LOOPING, AL10.AL_FALSE);
-                    AL10.alSourcef(sourceId, AL10.AL_GAIN, volume);
-                    AL10.alSourcef(sourceId, AL10.AL_ROLLOFF_FACTOR, 1.0f);
-                    AL10.alSourcef(sourceId, AL10.AL_REFERENCE_DISTANCE, 16.0f);
-                    AL10.alSourcef(sourceId, AL10.AL_MAX_DISTANCE, range);
-                    LOGGER.info("Stream {} assigned OpenAL source {}", id, sourceId);
-                }
+                initOpenALSource();
             }
 
             if (sourceId != -1) {
-                Vec3 pos = staticPos;
-                if (entityId != null && Minecraft.getInstance().level != null) {
-                    for (Entity en : Minecraft.getInstance().level.entitiesForRendering()) {
-                        if (en.getUUID().equals(entityId)) {
-                            pos = en.position();
-                            break;
-                        }
-                    }
-                }
-                if (pos != null) {
-                    AL10.alSource3f(sourceId, AL10.AL_POSITION, (float)pos.x, (float)pos.y, (float)pos.z);
-                }
-
+                updatePosition();
                 streamAudio();
             }
         }
 
-        private void streamAudio() {
-            if (vorbisHandle == MemoryUtil.NULL) return;
-
-            int processed = AL10.alGetSourcei(sourceId, AL10.AL_BUFFERS_PROCESSED);
-            while (processed-- > 0) {
-                int buf = AL10.alSourceUnqueueBuffers(sourceId);
-                fillBuffer(buf);
+        private void reopenDecoder() {
+            if (vorbisHandle != MemoryUtil.NULL) {
+                STBVorbis.stb_vorbis_close(vorbisHandle);
+                vorbisHandle = MemoryUtil.NULL;
             }
 
-            if (!hasStartedPlaying) {
-                boolean allFilled = true;
-                for (int buf : buffers) {
-                    if (!fillBuffer(buf)) {
-                        allFilled = false;
-                        break;
+            try (MemoryStack stack = MemoryStack.stackPush()) {
+                IntBuffer error = stack.mallocInt(1);
+                ByteBuffer slice = vorbisBuffer.duplicate();
+                slice.position(0).limit(writeCursor);
+
+                long h = STBVorbis.stb_vorbis_open_memory(slice, error, null);
+                if (h != MemoryUtil.NULL) {
+                    vorbisHandle = h;
+                    lastOpenCursor = writeCursor;
+                    if (info == null) {
+                        info = STBVorbisInfo.malloc();
+                        STBVorbis.stb_vorbis_get_info(vorbisHandle, info);
                     }
-                }
-                if (AL10.alGetSourcei(sourceId, AL10.AL_BUFFERS_QUEUED) > 0) {
-                    AL10.alSourcePlay(sourceId);
-                    hasStartedPlaying = true;
-                }
-            } else {
-                int state = AL10.alGetSourcei(sourceId, AL10.AL_SOURCE_STATE);
-                if (state != AL10.AL_PLAYING && state != AL10.AL_PAUSED && !inputFinished) {
-                    AL10.alSourcePlay(sourceId);
+
+                    if (totalSamplesDecoded > 0) {
+                        STBVorbis.stb_vorbis_seek(vorbisHandle, totalSamplesDecoded);
+                    }
                 }
             }
         }
 
-        // 【关键修复】使用 malloc 分配堆外内存，不再使用 Stack 分配大数据，防止 Stack Overflow
-        private boolean fillBuffer(int bufferId) {
-            int samples = 4096;
-            // 计算需要的字节数 (samples * channels * sizeof(short))
-            int sizeBytes = samples * info.channels() * 2;
+        private void initOpenALSource() {
+            Integer s = sourcePool.poll();
+            if (s != null) {
+                sourceId = s;
+                buffers[0] = AL10.alGenBuffers();
+                buffers[1] = AL10.alGenBuffers();
+                buffers[2] = AL10.alGenBuffers();
+                AL10.alSourcei(sourceId, AL10.AL_LOOPING, AL10.AL_FALSE);
+                AL10.alSourcef(sourceId, AL10.AL_GAIN, volume);
+                AL10.alSourcef(sourceId, AL10.AL_PITCH, pitch);
+                AL10.alSourcef(sourceId, AL10.AL_MAX_DISTANCE, range);
+                AL10.alSourcef(sourceId, AL10.AL_ROLLOFF_FACTOR, 1.0f);
+                AL10.alSourcef(sourceId, AL10.AL_REFERENCE_DISTANCE, 16.0f);
+            }
+        }
 
-            // 使用 memAlloc 直接在堆外分配
+        private void updatePosition() {
+            Vec3 pos = staticPos;
+            if (entityId != null && Minecraft.getInstance().level != null) {
+                for (Entity en : Minecraft.getInstance().level.entitiesForRendering()) {
+                    if (en.getUUID().equals(entityId)) { pos = en.position(); break; }
+                }
+            }
+            if (pos != null) AL10.alSource3f(sourceId, AL10.AL_POSITION, (float)pos.x, (float)pos.y, (float)pos.z);
+        }
+
+        private void streamAudio() {
+            if (vorbisHandle == MemoryUtil.NULL || decoderFinished) return;
+
+            int processed = AL10.alGetSourcei(sourceId, AL10.AL_BUFFERS_PROCESSED);
+            while (processed-- > 0) {
+                int buf = AL10.alSourceUnqueueBuffers(sourceId);
+                if (buf != 0) fillBuffer(buf);
+            }
+
+            int queued = AL10.alGetSourcei(sourceId, AL10.AL_BUFFERS_QUEUED);
+            if (queued == 0 && !decoderFinished) {
+                fillBuffer(buffers[0]);
+                fillBuffer(buffers[1]);
+                fillBuffer(buffers[2]);
+            }
+
+            int state = AL10.alGetSourcei(sourceId, AL10.AL_SOURCE_STATE);
+            if (AL10.alGetSourcei(sourceId, AL10.AL_BUFFERS_QUEUED) > 0 && state != AL10.AL_PLAYING && state != AL10.AL_PAUSED) {
+                AL10.alSourcePlay(sourceId);
+            }
+        }
+
+        private void fillBuffer(int bufferId) {
+            if (decoderFinished || vorbisHandle == MemoryUtil.NULL) return;
+
+            int samples = 8192;
+            // 使用 memAllocShort 分配的内存是未初始化的（Dirty Memory）
             ShortBuffer pcm = MemoryUtil.memAllocShort(samples * info.channels());
 
             try {
@@ -312,24 +318,26 @@ public class AudioEngine {
 
                 if (count > 0) {
                     totalSamplesDecoded += count;
-                    // alBufferData 会复制数据，所以这里的 pcm 马上就可以释放
+
+                    // 【核心修复】设置 limit，只让 OpenAL 读取实际解码的数据量
+                    // 如果不加这一行，OpenAL 会读取整个 8192 长度的 Buffer，末尾全是垃圾数据
+                    pcm.position(0).limit(count * info.channels());
+
                     AL10.alBufferData(bufferId, info.channels() == 1 ? AL10.AL_FORMAT_MONO16 : AL10.AL_FORMAT_STEREO16, pcm, info.sample_rate());
                     AL10.alSourceQueueBuffers(sourceId, bufferId);
-                    return true;
+                } else {
+                    if (inputFinished) {
+                        decoderFinished = true;
+                    }
                 }
-                return false;
             } finally {
-                // 必须在 finally 中释放，确保不泄露
-                if (pcm != null) {
-                    MemoryUtil.memFree(pcm);
-                }
+                MemoryUtil.memFree(pcm);
             }
         }
 
         public void dispose() {
             if (disposed) return;
             disposed = true;
-
             if (sourceId != -1) {
                 AL10.alSourceStop(sourceId);
                 AL10.alSourcei(sourceId, AL10.AL_BUFFER, 0);
@@ -337,20 +345,9 @@ public class AudioEngine {
                 sourcePool.add(sourceId);
                 sourceId = -1;
             }
-
-            if (info != null) {
-                info.free();
-                info = null;
-            }
-            if (vorbisHandle != MemoryUtil.NULL) {
-                STBVorbis.stb_vorbis_close(vorbisHandle);
-                vorbisHandle = MemoryUtil.NULL;
-            }
-            if (vorbisBuffer != null) {
-                MemoryUtil.memFree(vorbisBuffer);
-                vorbisBuffer = null;
-            }
-            LOGGER.info("Stream {} disposed", id);
+            if (info != null) { info.free(); info = null; }
+            if (vorbisHandle != MemoryUtil.NULL) { STBVorbis.stb_vorbis_close(vorbisHandle); vorbisHandle = MemoryUtil.NULL; }
+            if (vorbisBuffer != null) { MemoryUtil.memFree(vorbisBuffer); vorbisBuffer = null; }
         }
     }
 }
